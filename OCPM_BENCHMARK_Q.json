@@ -1,0 +1,2855 @@
+[
+  {
+    "template_id": "OCPM_GEN_001",
+    "category": "Category_1",
+    "formal_pattern": "Object-Type-Specific Node Out-Degree",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "What is the out-degree of activity $ACT_X for object type $OT_A in the OC-DFG?",
+    "runtime_variables": ["$OT_A", "$ACT_X"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "$ACT_X in ocel.activities",
+      "object_type_has_events($OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_ocdfg", "required": true },
+        { "tool": "get_node_metrics", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "node_out_degree",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "ocdfg.nodes[$ACT_X].metrics[$OT_A].out_degree"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_002",
+    "category": "Category_1",
+    "formal_pattern": "Object-Type-Specific Node In-Degree",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "What is the in-degree of activity $ACT_X for object type $OT_A in the OC-DFG?",
+    "runtime_variables": ["$OT_A", "$ACT_X"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "$ACT_X in ocel.activities",
+      "object_type_has_events($OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_ocdfg", "required": true },
+        { "tool": "get_node_metrics", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "node_in_degree",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "ocdfg.nodes[$ACT_X].metrics[$OT_A].in_degree"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_003",
+    "category": "Category_1",
+    "formal_pattern": "Object-Type-Specific Node Weight",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "What is the node weight of activity $ACT_X for object type $OT_A?",
+    "runtime_variables": ["$OT_A", "$ACT_X"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "$ACT_X in ocel.activities",
+      "object_type_has_events($OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_ocdfg", "required": true },
+        { "tool": "get_node_metrics", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "node_weight",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "ocdfg.nodes[$ACT_X].metrics[$OT_A].weight"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_004",
+    "category": "Category_1",
+    "formal_pattern": "Object-Type-Specific Start Frequency",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "What is the start frequency of activity $ACT_X for object type $OT_A?",
+    "runtime_variables": ["$OT_A", "$ACT_X"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "$ACT_X in ocel.activities",
+      "object_type_has_events($OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_ocdfg", "required": true },
+        { "tool": "get_node_metrics", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "node_start_frequency",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "ocdfg.nodes[$ACT_X].metrics[$OT_A].start_frequency"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_005",
+    "category": "Category_1",
+    "formal_pattern": "Object-Type-Specific End Frequency",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "What is the end frequency of activity $ACT_X for object type $OT_A?",
+    "runtime_variables": ["$OT_A", "$ACT_X"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "$ACT_X in ocel.activities",
+      "object_type_has_events($OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_ocdfg", "required": true },
+        { "tool": "get_node_metrics", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "node_end_frequency",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "ocdfg.nodes[$ACT_X].metrics[$OT_A].end_frequency"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_006",
+    "category": "Category_1",
+    "formal_pattern": "Maximum Out-Degree Node Selection",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "Which activity has the maximum out-degree for object type $OT_A?",
+    "runtime_variables": ["$OT_A"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "object_type_has_events($OT_A)",
+      "at_least_two_activities_for_object_type($OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_ocdfg", "required": true },
+        { "tool": "get_node_metrics", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "node_out_degree",
+        "aggregation_applied": "none",
+        "result_type": "activity",
+        "lookup_path": "argmax_activity(ocdfg.nodes, metric => metric.metrics[$OT_A].out_degree, tie_breaker => activity_name_ascending)"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_007",
+    "category": "Category_1",
+    "formal_pattern": "Maximum In-Degree Node Selection",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "Which activity has the maximum in-degree for object type $OT_A?",
+    "runtime_variables": ["$OT_A"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "object_type_has_events($OT_A)",
+      "at_least_two_activities_for_object_type($OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_ocdfg", "required": true },
+        { "tool": "get_node_metrics", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "node_in_degree",
+        "aggregation_applied": "none",
+        "result_type": "activity",
+        "lookup_path": "argmax_activity(ocdfg.nodes, metric => metric.metrics[$OT_A].in_degree, tie_breaker => activity_name_ascending)"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_008",
+    "category": "Category_1",
+    "formal_pattern": "Maximum Node Weight Selection",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "Which activity has the maximum node weight for object type $OT_A?",
+    "runtime_variables": ["$OT_A"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "object_type_has_events($OT_A)",
+      "at_least_two_activities_for_object_type($OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_ocdfg", "required": true },
+        { "tool": "get_node_metrics", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "node_weight",
+        "aggregation_applied": "none",
+        "result_type": "activity",
+        "lookup_path": "argmax_activity(ocdfg.nodes, metric => metric.metrics[$OT_A].weight, tie_breaker => activity_name_ascending)"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_009",
+    "category": "Category_1",
+    "formal_pattern": "Start Node Predicate",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "Is activity $ACT_X a start activity for object type $OT_A?",
+    "runtime_variables": ["$OT_A", "$ACT_X"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "$ACT_X in ocel.activities",
+      "object_type_has_events($OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_ocdfg", "required": true },
+        { "tool": "get_node_metrics", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "node_start_frequency",
+        "aggregation_applied": "none",
+        "result_type": "boolean",
+        "lookup_path": "ocdfg.nodes[$ACT_X].metrics[$OT_A].start_frequency > 0"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_010",
+    "category": "Category_1",
+    "formal_pattern": "End Node Predicate",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "Is activity $ACT_X an end activity for object type $OT_A?",
+    "runtime_variables": ["$OT_A", "$ACT_X"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "$ACT_X in ocel.activities",
+      "object_type_has_events($OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_ocdfg", "required": true },
+        { "tool": "get_node_metrics", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "node_end_frequency",
+        "aggregation_applied": "none",
+        "result_type": "boolean",
+        "lookup_path": "ocdfg.nodes[$ACT_X].metrics[$OT_A].end_frequency > 0"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_011",
+    "category": "Category_1",
+    "formal_pattern": "Zero In-Degree Node Set",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "Which activities have zero in-degree for object type $OT_A?",
+    "runtime_variables": ["$OT_A"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "object_type_has_events($OT_A)",
+      "at_least_two_activities_for_object_type($OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_ocdfg", "required": true },
+        { "tool": "get_node_metrics", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "node_in_degree",
+        "aggregation_applied": "none",
+        "result_type": "activity_list",
+        "lookup_path": "sorted(ocdfg.nodes.filter(node => node.metrics[$OT_A].in_degree == 0))"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_012",
+    "category": "Category_1",
+    "formal_pattern": "Zero Out-Degree Node Set",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "Which activities have zero out-degree for object type $OT_A?",
+    "runtime_variables": ["$OT_A"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "object_type_has_events($OT_A)",
+      "at_least_two_activities_for_object_type($OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_ocdfg", "required": true },
+        { "tool": "get_node_metrics", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "node_out_degree",
+        "aggregation_applied": "none",
+        "result_type": "activity_list",
+        "lookup_path": "sorted(ocdfg.nodes.filter(node => node.metrics[$OT_A].out_degree == 0))"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_013",
+    "category": "Category_1",
+    "formal_pattern": "Start Activity Set",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "Which activities have positive start frequency for object type $OT_A?",
+    "runtime_variables": ["$OT_A"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "object_type_has_events($OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_ocdfg", "required": true },
+        { "tool": "get_node_metrics", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "node_start_frequency",
+        "aggregation_applied": "none",
+        "result_type": "activity_list",
+        "lookup_path": "sorted(ocdfg.nodes.filter(node => node.metrics[$OT_A].start_frequency > 0))"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_014",
+    "category": "Category_1",
+    "formal_pattern": "End Activity Set",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "Which activities have positive end frequency for object type $OT_A?",
+    "runtime_variables": ["$OT_A"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "object_type_has_events($OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_ocdfg", "required": true },
+        { "tool": "get_node_metrics", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "node_end_frequency",
+        "aggregation_applied": "none",
+        "result_type": "activity_list",
+        "lookup_path": "sorted(ocdfg.nodes.filter(node => node.metrics[$OT_A].end_frequency > 0))"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_015",
+    "category": "Category_1",
+    "formal_pattern": "Balanced Degree Predicate",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "Does activity $ACT_X have equal in-degree and out-degree for object type $OT_A?",
+    "runtime_variables": ["$OT_A", "$ACT_X"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "$ACT_X in ocel.activities",
+      "object_type_has_events($OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_ocdfg", "required": true },
+        { "tool": "get_node_metrics", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "node_in_degree",
+        "aggregation_applied": "none",
+        "result_type": "boolean",
+        "lookup_path": "ocdfg.nodes[$ACT_X].metrics[$OT_A].in_degree == ocdfg.nodes[$ACT_X].metrics[$OT_A].out_degree"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_016",
+    "category": "Category_1",
+    "formal_pattern": "Out-Degree Dominance Predicate",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "Does activity $ACT_X have a strictly larger out-degree than in-degree for object type $OT_A?",
+    "runtime_variables": ["$OT_A", "$ACT_X"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "$ACT_X in ocel.activities",
+      "object_type_has_events($OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_ocdfg", "required": true },
+        { "tool": "get_node_metrics", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "node_out_degree",
+        "aggregation_applied": "none",
+        "result_type": "boolean",
+        "lookup_path": "ocdfg.nodes[$ACT_X].metrics[$OT_A].out_degree > ocdfg.nodes[$ACT_X].metrics[$OT_A].in_degree"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_017",
+    "category": "Category_1",
+    "formal_pattern": "In-Degree Dominance Predicate",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "Does activity $ACT_X have a strictly larger in-degree than out-degree for object type $OT_A?",
+    "runtime_variables": ["$OT_A", "$ACT_X"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "$ACT_X in ocel.activities",
+      "object_type_has_events($OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_ocdfg", "required": true },
+        { "tool": "get_node_metrics", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "node_in_degree",
+        "aggregation_applied": "none",
+        "result_type": "boolean",
+        "lookup_path": "ocdfg.nodes[$ACT_X].metrics[$OT_A].in_degree > ocdfg.nodes[$ACT_X].metrics[$OT_A].out_degree"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_018",
+    "category": "Category_1",
+    "formal_pattern": "Degree Sum Node Score",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "What is the total degree of activity $ACT_X for object type $OT_A?",
+    "runtime_variables": ["$OT_A", "$ACT_X"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "$ACT_X in ocel.activities",
+      "object_type_has_events($OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_ocdfg", "required": true },
+        { "tool": "get_node_metrics", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "node_weight",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "ocdfg.nodes[$ACT_X].metrics[$OT_A].in_degree + ocdfg.nodes[$ACT_X].metrics[$OT_A].out_degree"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_019",
+    "category": "Category_1",
+    "formal_pattern": "Maximum Total Degree Node Selection",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "Which activity has the maximum total degree for object type $OT_A?",
+    "runtime_variables": ["$OT_A"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "object_type_has_events($OT_A)",
+      "at_least_two_activities_for_object_type($OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_ocdfg", "required": true },
+        { "tool": "get_node_metrics", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "node_weight",
+        "aggregation_applied": "none",
+        "result_type": "activity",
+        "lookup_path": "argmax_activity(ocdfg.nodes, metric => metric.metrics[$OT_A].in_degree + metric.metrics[$OT_A].out_degree, tie_breaker => activity_name_ascending)"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_020",
+    "category": "Category_1",
+    "formal_pattern": "Object Frequency at Activity",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "What is the object frequency associated with activity $ACT_X for object type $OT_A?",
+    "runtime_variables": ["$OT_A", "$ACT_X"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "$ACT_X in ocel.activities",
+      "object_type_has_events($OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_ocdfg", "required": true },
+        { "tool": "get_node_metrics", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "object_frequency",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "ocdfg.nodes[$ACT_X].metrics[$OT_A].object_frequency"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_021",
+    "category": "Category_1",
+    "formal_pattern": "Maximum Object Frequency Activity Selection",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "Which activity has the maximum object frequency for object type $OT_A?",
+    "runtime_variables": ["$OT_A"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "object_type_has_events($OT_A)",
+      "at_least_two_activities_for_object_type($OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_ocdfg", "required": true },
+        { "tool": "get_node_metrics", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "object_frequency",
+        "aggregation_applied": "none",
+        "result_type": "activity",
+        "lookup_path": "argmax_activity(ocdfg.nodes, metric => metric.metrics[$OT_A].object_frequency, tie_breaker => activity_name_ascending)"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_022",
+    "category": "Category_1",
+    "formal_pattern": "Activity Weight Comparison",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "Does activity $ACT_X have a larger node weight than activity $ACT_Y for object type $OT_A?",
+    "runtime_variables": ["$OT_A", "$ACT_X", "$ACT_Y"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "$ACT_X in ocel.activities",
+      "$ACT_Y in ocel.activities",
+      "$ACT_X != $ACT_Y",
+      "object_type_has_events($OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_ocdfg", "required": true },
+        { "tool": "get_node_metrics", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "node_weight",
+        "aggregation_applied": "none",
+        "result_type": "boolean",
+        "lookup_path": "ocdfg.nodes[$ACT_X].metrics[$OT_A].weight > ocdfg.nodes[$ACT_Y].metrics[$OT_A].weight"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_023",
+    "category": "Category_1",
+    "formal_pattern": "Out-Degree Comparison",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "Does activity $ACT_X have a larger out-degree than activity $ACT_Y for object type $OT_A?",
+    "runtime_variables": ["$OT_A", "$ACT_X", "$ACT_Y"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "$ACT_X in ocel.activities",
+      "$ACT_Y in ocel.activities",
+      "$ACT_X != $ACT_Y",
+      "object_type_has_events($OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_ocdfg", "required": true },
+        { "tool": "get_node_metrics", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "node_out_degree",
+        "aggregation_applied": "none",
+        "result_type": "boolean",
+        "lookup_path": "ocdfg.nodes[$ACT_X].metrics[$OT_A].out_degree > ocdfg.nodes[$ACT_Y].metrics[$OT_A].out_degree"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_024",
+    "category": "Category_1",
+    "formal_pattern": "In-Degree Comparison",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "Does activity $ACT_X have a larger in-degree than activity $ACT_Y for object type $OT_A?",
+    "runtime_variables": ["$OT_A", "$ACT_X", "$ACT_Y"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "$ACT_X in ocel.activities",
+      "$ACT_Y in ocel.activities",
+      "$ACT_X != $ACT_Y",
+      "object_type_has_events($OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_ocdfg", "required": true },
+        { "tool": "get_node_metrics", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "node_in_degree",
+        "aggregation_applied": "none",
+        "result_type": "boolean",
+        "lookup_path": "ocdfg.nodes[$ACT_X].metrics[$OT_A].in_degree > ocdfg.nodes[$ACT_Y].metrics[$OT_A].in_degree"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_025",
+    "category": "Category_1",
+    "formal_pattern": "Object-Type Node Coverage",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "Which activities have positive node weight for object type $OT_A?",
+    "runtime_variables": ["$OT_A"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "object_type_has_events($OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_ocdfg", "required": true },
+        { "tool": "get_node_metrics", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "node_weight",
+        "aggregation_applied": "none",
+        "result_type": "activity_list",
+        "lookup_path": "sorted(ocdfg.nodes.filter(node => node.metrics[$OT_A].weight > 0))"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_026",
+    "category": "Category_2",
+    "formal_pattern": "Object-Type-Specific Edge Weight",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "What is the edge weight of the directed transition from $ACT_X to $ACT_Y for object type $OT_A?",
+    "runtime_variables": ["$OT_A", "$ACT_X", "$ACT_Y"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "$ACT_X in ocel.activities",
+      "$ACT_Y in ocel.activities",
+      "$ACT_X != $ACT_Y",
+      "edge_exists($ACT_X, $ACT_Y, $OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_ocdfg", "required": true },
+        { "tool": "get_edge_metrics", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "edge_weight",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "ocdfg.edges[($ACT_X,$ACT_Y,$OT_A)].weight"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_027",
+    "category": "Category_2",
+    "formal_pattern": "Aggregated Edge Duration",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "What is the $SIGMA edge duration of the directed transition from $ACT_X to $ACT_Y for object type $OT_A?",
+    "runtime_variables": ["$OT_A", "$ACT_X", "$ACT_Y", "$SIGMA"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "$ACT_X in ocel.activities",
+      "$ACT_Y in ocel.activities",
+      "$ACT_X != $ACT_Y",
+      "edge_exists($ACT_X, $ACT_Y, $OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_ocdfg", "required": true },
+        { "tool": "get_edge_metrics", "required": true },
+        { "tool": "aggregate_metric", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "edge_duration",
+        "aggregation_applied": "$SIGMA",
+        "result_type": "float",
+        "lookup_path": "aggregate($SIGMA, ocdfg.edges[($ACT_X,$ACT_Y,$OT_A)].durations)"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_028",
+    "category": "Category_2",
+    "formal_pattern": "Aggregated Edge Waiting Time",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "What is the $SIGMA waiting time on the directed transition from $ACT_X to $ACT_Y for object type $OT_A?",
+    "runtime_variables": ["$OT_A", "$ACT_X", "$ACT_Y", "$SIGMA"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "$ACT_X in ocel.activities",
+      "$ACT_Y in ocel.activities",
+      "$ACT_X != $ACT_Y",
+      "edge_exists($ACT_X, $ACT_Y, $OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_ocdfg", "required": true },
+        { "tool": "get_edge_metrics", "required": true },
+        { "tool": "aggregate_metric", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "waiting_time",
+        "aggregation_applied": "$SIGMA",
+        "result_type": "float",
+        "lookup_path": "aggregate($SIGMA, ocdfg.edges[($ACT_X,$ACT_Y,$OT_A)].waiting_times)"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_029",
+    "category": "Category_2",
+    "formal_pattern": "Aggregated Edge Sojourn Time",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "What is the $SIGMA sojourn time associated with the directed transition from $ACT_X to $ACT_Y for object type $OT_A?",
+    "runtime_variables": ["$OT_A", "$ACT_X", "$ACT_Y", "$SIGMA"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "$ACT_X in ocel.activities",
+      "$ACT_Y in ocel.activities",
+      "$ACT_X != $ACT_Y",
+      "edge_exists($ACT_X, $ACT_Y, $OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_ocdfg", "required": true },
+        { "tool": "get_edge_metrics", "required": true },
+        { "tool": "aggregate_metric", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "sojourn_time",
+        "aggregation_applied": "$SIGMA",
+        "result_type": "float",
+        "lookup_path": "aggregate($SIGMA, ocdfg.edges[($ACT_X,$ACT_Y,$OT_A)].sojourn_times)"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_030",
+    "category": "Category_2",
+    "formal_pattern": "Positive Edge Weight Predicate",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "Does the directed transition from $ACT_X to $ACT_Y have positive edge weight for object type $OT_A?",
+    "runtime_variables": ["$OT_A", "$ACT_X", "$ACT_Y"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "$ACT_X in ocel.activities",
+      "$ACT_Y in ocel.activities",
+      "$ACT_X != $ACT_Y",
+      "edge_exists($ACT_X, $ACT_Y, $OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_ocdfg", "required": true },
+        { "tool": "get_edge_metrics", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "edge_weight",
+        "aggregation_applied": "none",
+        "result_type": "boolean",
+        "lookup_path": "ocdfg.edges[($ACT_X,$ACT_Y,$OT_A)].weight > 0"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_031",
+    "category": "Category_2",
+    "formal_pattern": "Outgoing Maximum Edge Weight Selection",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "Which outgoing directed transition from activity $ACT_X has the maximum edge weight for object type $OT_A?",
+    "runtime_variables": ["$OT_A", "$ACT_X"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "$ACT_X in ocel.activities",
+      "object_type_has_events($OT_A)",
+      "at_least_two_activities_for_object_type($OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_ocdfg", "required": true },
+        { "tool": "get_edge_metrics", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "edge_weight",
+        "aggregation_applied": "none",
+        "result_type": "edge",
+        "lookup_path": "argmax_edge(ocdfg.edges.filter(edge => edge.source == $ACT_X and edge.object_type == $OT_A), metric => edge.weight, tie_breaker => target_activity_name_ascending)"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_032",
+    "category": "Category_2",
+    "formal_pattern": "Incoming Maximum Edge Weight Selection",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "Which incoming directed transition into activity $ACT_Y has the maximum edge weight for object type $OT_A?",
+    "runtime_variables": ["$OT_A", "$ACT_Y"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "$ACT_Y in ocel.activities",
+      "object_type_has_events($OT_A)",
+      "at_least_two_activities_for_object_type($OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_ocdfg", "required": true },
+        { "tool": "get_edge_metrics", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "edge_weight",
+        "aggregation_applied": "none",
+        "result_type": "edge",
+        "lookup_path": "argmax_edge(ocdfg.edges.filter(edge => edge.target == $ACT_Y and edge.object_type == $OT_A), metric => edge.weight, tie_breaker => source_activity_name_ascending)"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_033",
+    "category": "Category_2",
+    "formal_pattern": "Outgoing Edge Weight Set",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "Which outgoing directed transitions from activity $ACT_X have positive edge weight for object type $OT_A?",
+    "runtime_variables": ["$OT_A", "$ACT_X"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "$ACT_X in ocel.activities",
+      "object_type_has_events($OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_ocdfg", "required": true },
+        { "tool": "get_edge_metrics", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "edge_weight",
+        "aggregation_applied": "none",
+        "result_type": "edge_list",
+        "lookup_path": "sorted(ocdfg.edges.filter(edge => edge.source == $ACT_X and edge.object_type == $OT_A and edge.weight > 0), order_by => target_activity_name_ascending)"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_034",
+    "category": "Category_2",
+    "formal_pattern": "Incoming Edge Weight Set",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "Which incoming directed transitions into activity $ACT_Y have positive edge weight for object type $OT_A?",
+    "runtime_variables": ["$OT_A", "$ACT_Y"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "$ACT_Y in ocel.activities",
+      "object_type_has_events($OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_ocdfg", "required": true },
+        { "tool": "get_edge_metrics", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "edge_weight",
+        "aggregation_applied": "none",
+        "result_type": "edge_list",
+        "lookup_path": "sorted(ocdfg.edges.filter(edge => edge.target == $ACT_Y and edge.object_type == $OT_A and edge.weight > 0), order_by => source_activity_name_ascending)"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_035",
+    "category": "Category_2",
+    "formal_pattern": "Edge Weight Comparison",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "Does the directed transition from $ACT_X to $ACT_Y have larger edge weight than the directed transition from $ACT_X to $ACT_Z for object type $OT_A?",
+    "runtime_variables": ["$OT_A", "$ACT_X", "$ACT_Y", "$ACT_Z"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "$ACT_X in ocel.activities",
+      "$ACT_Y in ocel.activities",
+      "$ACT_Z in ocel.activities",
+      "$ACT_X != $ACT_Y",
+      "$ACT_X != $ACT_Z",
+      "$ACT_Y != $ACT_Z",
+      "edge_exists($ACT_X, $ACT_Y, $OT_A)",
+      "edge_exists($ACT_X, $ACT_Z, $OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_ocdfg", "required": true },
+        { "tool": "get_edge_metrics", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "edge_weight",
+        "aggregation_applied": "none",
+        "result_type": "boolean",
+        "lookup_path": "ocdfg.edges[($ACT_X,$ACT_Y,$OT_A)].weight > ocdfg.edges[($ACT_X,$ACT_Z,$OT_A)].weight"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_036",
+    "category": "Category_2",
+    "formal_pattern": "Aggregated Edge Duration Comparison",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "Is the $SIGMA edge duration of the directed transition from $ACT_X to $ACT_Y greater than the $SIGMA edge duration of the directed transition from $ACT_X to $ACT_Z for object type $OT_A?",
+    "runtime_variables": ["$OT_A", "$ACT_X", "$ACT_Y", "$ACT_Z", "$SIGMA"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "$ACT_X in ocel.activities",
+      "$ACT_Y in ocel.activities",
+      "$ACT_Z in ocel.activities",
+      "$ACT_X != $ACT_Y",
+      "$ACT_X != $ACT_Z",
+      "$ACT_Y != $ACT_Z",
+      "edge_exists($ACT_X, $ACT_Y, $OT_A)",
+      "edge_exists($ACT_X, $ACT_Z, $OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_ocdfg", "required": true },
+        { "tool": "get_edge_metrics", "required": true },
+        { "tool": "aggregate_metric", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "edge_duration",
+        "aggregation_applied": "$SIGMA",
+        "result_type": "boolean",
+        "lookup_path": "aggregate($SIGMA, ocdfg.edges[($ACT_X,$ACT_Y,$OT_A)].durations) > aggregate($SIGMA, ocdfg.edges[($ACT_X,$ACT_Z,$OT_A)].durations)"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_037",
+    "category": "Category_2",
+    "formal_pattern": "Aggregated Waiting Time Comparison",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "Is the $SIGMA waiting time of the directed transition from $ACT_X to $ACT_Y greater than the $SIGMA waiting time of the directed transition from $ACT_X to $ACT_Z for object type $OT_A?",
+    "runtime_variables": ["$OT_A", "$ACT_X", "$ACT_Y", "$ACT_Z", "$SIGMA"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "$ACT_X in ocel.activities",
+      "$ACT_Y in ocel.activities",
+      "$ACT_Z in ocel.activities",
+      "$ACT_X != $ACT_Y",
+      "$ACT_X != $ACT_Z",
+      "$ACT_Y != $ACT_Z",
+      "edge_exists($ACT_X, $ACT_Y, $OT_A)",
+      "edge_exists($ACT_X, $ACT_Z, $OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_ocdfg", "required": true },
+        { "tool": "get_edge_metrics", "required": true },
+        { "tool": "aggregate_metric", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "waiting_time",
+        "aggregation_applied": "$SIGMA",
+        "result_type": "boolean",
+        "lookup_path": "aggregate($SIGMA, ocdfg.edges[($ACT_X,$ACT_Y,$OT_A)].waiting_times) > aggregate($SIGMA, ocdfg.edges[($ACT_X,$ACT_Z,$OT_A)].waiting_times)"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_038",
+    "category": "Category_2",
+    "formal_pattern": "Maximum Aggregated Edge Duration Selection",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "Which directed transition has the maximum $SIGMA edge duration for object type $OT_A?",
+    "runtime_variables": ["$OT_A", "$SIGMA"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "object_type_has_events($OT_A)",
+      "at_least_two_activities_for_object_type($OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_ocdfg", "required": true },
+        { "tool": "get_edge_metrics", "required": true },
+        { "tool": "aggregate_metric", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "edge_duration",
+        "aggregation_applied": "$SIGMA",
+        "result_type": "edge",
+        "lookup_path": "argmax_edge(ocdfg.edges.filter(edge => edge.object_type == $OT_A), metric => aggregate($SIGMA, edge.durations), tie_breaker => source_then_target_activity_name_ascending)"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_039",
+    "category": "Category_2",
+    "formal_pattern": "Maximum Aggregated Waiting Time Selection",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "Which directed transition has the maximum $SIGMA waiting time for object type $OT_A?",
+    "runtime_variables": ["$OT_A", "$SIGMA"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "object_type_has_events($OT_A)",
+      "at_least_two_activities_for_object_type($OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_ocdfg", "required": true },
+        { "tool": "get_edge_metrics", "required": true },
+        { "tool": "aggregate_metric", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "waiting_time",
+        "aggregation_applied": "$SIGMA",
+        "result_type": "edge",
+        "lookup_path": "argmax_edge(ocdfg.edges.filter(edge => edge.object_type == $OT_A), metric => aggregate($SIGMA, edge.waiting_times), tie_breaker => source_then_target_activity_name_ascending)"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_040",
+    "category": "Category_2",
+    "formal_pattern": "Aggregated Numerical Edge Attribute",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "What is the $SIGMA value of numerical attribute $NET_ATT on the directed transition from $ACT_X to $ACT_Y for object type $OT_A?",
+    "runtime_variables": ["$OT_A", "$ACT_X", "$ACT_Y", "$NET_ATT", "$SIGMA"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "$ACT_X in ocel.activities",
+      "$ACT_Y in ocel.activities",
+      "$ACT_X != $ACT_Y",
+      "edge_exists($ACT_X, $ACT_Y, $OT_A)",
+      "numeric_attribute_exists($NET_ATT)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_ocdfg", "required": true },
+        { "tool": "get_edge_metrics", "required": true },
+        { "tool": "aggregate_metric", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "edge_weight",
+        "aggregation_applied": "$SIGMA",
+        "result_type": "float",
+        "lookup_path": "aggregate($SIGMA, ocdfg.edges[($ACT_X,$ACT_Y,$OT_A)].attributes[$NET_ATT])"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_041",
+    "category": "Category_2",
+    "formal_pattern": "Maximum Aggregated Numerical Edge Attribute Selection",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "Which directed transition has the maximum $SIGMA value of numerical attribute $NET_ATT for object type $OT_A?",
+    "runtime_variables": ["$OT_A", "$NET_ATT", "$SIGMA"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "object_type_has_events($OT_A)",
+      "numeric_attribute_exists($NET_ATT)",
+      "at_least_two_activities_for_object_type($OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_ocdfg", "required": true },
+        { "tool": "get_edge_metrics", "required": true },
+        { "tool": "aggregate_metric", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "edge_weight",
+        "aggregation_applied": "$SIGMA",
+        "result_type": "edge",
+        "lookup_path": "argmax_edge(ocdfg.edges.filter(edge => edge.object_type == $OT_A), metric => aggregate($SIGMA, edge.attributes[$NET_ATT]), tie_breaker => source_then_target_activity_name_ascending)"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_042",
+    "category": "Category_2",
+    "formal_pattern": "Aggregated Numerical Edge Attribute Comparison",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "Is the $SIGMA value of numerical attribute $NET_ATT on the directed transition from $ACT_X to $ACT_Y greater than on the directed transition from $ACT_X to $ACT_Z for object type $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X",
+      "$ACT_Y",
+      "$ACT_Z",
+      "$NET_ATT",
+      "$SIGMA"
+    ],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "$ACT_X in ocel.activities",
+      "$ACT_Y in ocel.activities",
+      "$ACT_Z in ocel.activities",
+      "$ACT_X != $ACT_Y",
+      "$ACT_X != $ACT_Z",
+      "$ACT_Y != $ACT_Z",
+      "edge_exists($ACT_X, $ACT_Y, $OT_A)",
+      "edge_exists($ACT_X, $ACT_Z, $OT_A)",
+      "numeric_attribute_exists($NET_ATT)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_ocdfg", "required": true },
+        { "tool": "get_edge_metrics", "required": true },
+        { "tool": "aggregate_metric", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "edge_weight",
+        "aggregation_applied": "$SIGMA",
+        "result_type": "boolean",
+        "lookup_path": "aggregate($SIGMA, ocdfg.edges[($ACT_X,$ACT_Y,$OT_A)].attributes[$NET_ATT]) > aggregate($SIGMA, ocdfg.edges[($ACT_X,$ACT_Z,$OT_A)].attributes[$NET_ATT])"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_043",
+    "category": "Category_2",
+    "formal_pattern": "Normalized Outgoing Edge Weight",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "What is the normalized outgoing edge weight of the directed transition from $ACT_X to $ACT_Y for object type $OT_A relative to all outgoing directed transitions from $ACT_X?",
+    "runtime_variables": ["$OT_A", "$ACT_X", "$ACT_Y"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "$ACT_X in ocel.activities",
+      "$ACT_Y in ocel.activities",
+      "$ACT_X != $ACT_Y",
+      "edge_exists($ACT_X, $ACT_Y, $OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_ocdfg", "required": true },
+        { "tool": "get_edge_metrics", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "edge_weight",
+        "aggregation_applied": "none",
+        "result_type": "float",
+        "lookup_path": "ocdfg.edges[($ACT_X,$ACT_Y,$OT_A)].weight / sum(ocdfg.edges.filter(edge => edge.source == $ACT_X and edge.object_type == $OT_A).weight)"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_044",
+    "category": "Category_2",
+    "formal_pattern": "Normalized Incoming Edge Weight",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "What is the normalized incoming edge weight of the directed transition from $ACT_X to $ACT_Y for object type $OT_A relative to all incoming directed transitions into $ACT_Y?",
+    "runtime_variables": ["$OT_A", "$ACT_X", "$ACT_Y"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "$ACT_X in ocel.activities",
+      "$ACT_Y in ocel.activities",
+      "$ACT_X != $ACT_Y",
+      "edge_exists($ACT_X, $ACT_Y, $OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_ocdfg", "required": true },
+        { "tool": "get_edge_metrics", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "edge_weight",
+        "aggregation_applied": "none",
+        "result_type": "float",
+        "lookup_path": "ocdfg.edges[($ACT_X,$ACT_Y,$OT_A)].weight / sum(ocdfg.edges.filter(edge => edge.target == $ACT_Y and edge.object_type == $OT_A).weight)"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_045",
+    "category": "Category_2",
+    "formal_pattern": "Reverse Edge Weight Ratio",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "What is the ratio between the edge weight from $ACT_X to $ACT_Y and the edge weight from $ACT_Y to $ACT_X for object type $OT_A?",
+    "runtime_variables": ["$OT_A", "$ACT_X", "$ACT_Y"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "$ACT_X in ocel.activities",
+      "$ACT_Y in ocel.activities",
+      "$ACT_X != $ACT_Y",
+      "edge_exists($ACT_X, $ACT_Y, $OT_A)",
+      "edge_exists($ACT_Y, $ACT_X, $OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_ocdfg", "required": true },
+        { "tool": "get_edge_metrics", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "edge_weight",
+        "aggregation_applied": "none",
+        "result_type": "float",
+        "lookup_path": "ocdfg.edges[($ACT_X,$ACT_Y,$OT_A)].weight / ocdfg.edges[($ACT_Y,$ACT_X,$OT_A)].weight"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_046",
+    "category": "Category_2",
+    "formal_pattern": "Aggregated Synchronization Latency Between Object Types",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "What is the $SIGMA synchronization latency between object type $OT_A and object type $OT_B at activity $ACT_X?",
+    "runtime_variables": ["$OT_A", "$OT_B", "$ACT_X", "$SIGMA"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "$OT_B in ocel.object_types",
+      "$OT_A != $OT_B",
+      "$ACT_X in ocel.activities",
+      "object_types_cooccur($OT_A, $OT_B)",
+      "synchronization_observable($OT_A, $OT_B)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_event_table", "required": true },
+        { "tool": "compute_synchronization_latency", "required": true },
+        { "tool": "aggregate_metric", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "synchronization_latency",
+        "aggregation_applied": "$SIGMA",
+        "result_type": "float",
+        "lookup_path": "aggregate($SIGMA, event_table.synchronization_latency(activity == $ACT_X, object_types == ($OT_A,$OT_B)))"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_047",
+    "category": "Category_2",
+    "formal_pattern": "Maximum Synchronization Latency Activity Selection",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "Which activity has the maximum $SIGMA synchronization latency between object type $OT_A and object type $OT_B?",
+    "runtime_variables": ["$OT_A", "$OT_B", "$SIGMA"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "$OT_B in ocel.object_types",
+      "$OT_A != $OT_B",
+      "object_types_cooccur($OT_A, $OT_B)",
+      "synchronization_observable($OT_A, $OT_B)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_event_table", "required": true },
+        { "tool": "compute_synchronization_latency", "required": true },
+        { "tool": "aggregate_metric", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "synchronization_latency",
+        "aggregation_applied": "$SIGMA",
+        "result_type": "activity",
+        "lookup_path": "argmax_activity(event_table.activities, metric => aggregate($SIGMA, event_table.synchronization_latency(activity == activity, object_types == ($OT_A,$OT_B))), tie_breaker => activity_name_ascending)"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_048",
+    "category": "Category_2",
+    "formal_pattern": "Edge Duration Presence Predicate",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "Is the $SIGMA edge duration defined for the directed transition from $ACT_X to $ACT_Y for object type $OT_A?",
+    "runtime_variables": ["$OT_A", "$ACT_X", "$ACT_Y", "$SIGMA"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "$ACT_X in ocel.activities",
+      "$ACT_Y in ocel.activities",
+      "$ACT_X != $ACT_Y",
+      "edge_exists($ACT_X, $ACT_Y, $OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_ocdfg", "required": true },
+        { "tool": "get_edge_metrics", "required": true },
+        { "tool": "aggregate_metric", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "edge_duration",
+        "aggregation_applied": "$SIGMA",
+        "result_type": "boolean",
+        "lookup_path": "is_defined(aggregate($SIGMA, ocdfg.edges[($ACT_X,$ACT_Y,$OT_A)].durations))"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_049",
+    "category": "Category_2",
+    "formal_pattern": "Positive Aggregated Waiting Time Edge Set",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "Which directed transitions have positive $SIGMA waiting time for object type $OT_A?",
+    "runtime_variables": ["$OT_A", "$SIGMA"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "object_type_has_events($OT_A)",
+      "at_least_two_activities_for_object_type($OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_ocdfg", "required": true },
+        { "tool": "get_edge_metrics", "required": true },
+        { "tool": "aggregate_metric", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "waiting_time",
+        "aggregation_applied": "$SIGMA",
+        "result_type": "edge_list",
+        "lookup_path": "sorted(ocdfg.edges.filter(edge => edge.object_type == $OT_A and aggregate($SIGMA, edge.waiting_times) > 0), order_by => source_then_target_activity_name_ascending)"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_050",
+    "category": "Category_2",
+    "formal_pattern": "Positive Aggregated Edge Duration Edge Set",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "Which directed transitions have positive $SIGMA edge duration for object type $OT_A?",
+    "runtime_variables": ["$OT_A", "$SIGMA"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "object_type_has_events($OT_A)",
+      "at_least_two_activities_for_object_type($OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_ocdfg", "required": true },
+        { "tool": "get_edge_metrics", "required": true },
+        { "tool": "aggregate_metric", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "edge_duration",
+        "aggregation_applied": "$SIGMA",
+        "result_type": "edge_list",
+        "lookup_path": "sorted(ocdfg.edges.filter(edge => edge.object_type == $OT_A and aggregate($SIGMA, edge.durations) > 0), order_by => source_then_target_activity_name_ascending)"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_051",
+    "category": "Category_3",
+    "formal_pattern": "Directed Path Existence",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "Does a directed path exist from activity $ACT_X to activity $ACT_Y for object type $OT_A?",
+    "runtime_variables": ["$OT_A", "$ACT_X", "$ACT_Y"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "$ACT_X in ocel.activities",
+      "$ACT_Y in ocel.activities",
+      "$ACT_X != $ACT_Y",
+      "object_type_has_events($OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_ocdfg", "required": true },
+        { "tool": "compute_path_existence", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "path_existence",
+        "aggregation_applied": "none",
+        "result_type": "boolean",
+        "lookup_path": "path_exists($ACT_X, $ACT_Y, $OT_A)"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_052",
+    "category": "Category_3",
+    "formal_pattern": "Direct Edge Reachability",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "Is activity $ACT_Y directly reachable from activity $ACT_X for object type $OT_A?",
+    "runtime_variables": ["$OT_A", "$ACT_X", "$ACT_Y"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "$ACT_X in ocel.activities",
+      "$ACT_Y in ocel.activities",
+      "$ACT_X != $ACT_Y",
+      "object_type_has_events($OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_ocdfg", "required": true },
+        { "tool": "get_edge_metrics", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "path_existence",
+        "aggregation_applied": "none",
+        "result_type": "boolean",
+        "lookup_path": "edge_exists($ACT_X, $ACT_Y, $OT_A)"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_053",
+    "category": "Category_3",
+    "formal_pattern": "Indirect Reachability Predicate",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "Is activity $ACT_Y indirectly reachable from activity $ACT_X for object type $OT_A?",
+    "runtime_variables": ["$OT_A", "$ACT_X", "$ACT_Y"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "$ACT_X in ocel.activities",
+      "$ACT_Y in ocel.activities",
+      "$ACT_X != $ACT_Y",
+      "object_type_has_events($OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_ocdfg", "required": true },
+        { "tool": "compute_path_existence", "required": true },
+        { "tool": "compute_path_distance", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "path_distance",
+        "aggregation_applied": "none",
+        "result_type": "boolean",
+        "lookup_path": "path_exists($ACT_X, $ACT_Y, $OT_A) and shortest_path_distance($OT_A, $ACT_X, $ACT_Y) > 1"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_054",
+    "category": "Category_3",
+    "formal_pattern": "Shortest Path Distance",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "What is the shortest directed path distance from activity $ACT_X to activity $ACT_Y for object type $OT_A?",
+    "runtime_variables": ["$OT_A", "$ACT_X", "$ACT_Y"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "$ACT_X in ocel.activities",
+      "$ACT_Y in ocel.activities",
+      "$ACT_X != $ACT_Y",
+      "path_exists($ACT_X, $ACT_Y, $OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_ocdfg", "required": true },
+        { "tool": "compute_path_distance", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "path_distance",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "shortest_path_distance($OT_A, $ACT_X, $ACT_Y)"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_055",
+    "category": "Category_3",
+    "formal_pattern": "Shortest Path Activity Sequence",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "Which activities occur on the shortest directed path from activity $ACT_X to activity $ACT_Y for object type $OT_A?",
+    "runtime_variables": ["$OT_A", "$ACT_X", "$ACT_Y"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "$ACT_X in ocel.activities",
+      "$ACT_Y in ocel.activities",
+      "$ACT_X != $ACT_Y",
+      "path_exists($ACT_X, $ACT_Y, $OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_ocdfg", "required": true },
+        { "tool": "compute_path_distance", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "path_distance",
+        "aggregation_applied": "none",
+        "result_type": "activity_list",
+        "lookup_path": "shortest_path($OT_A, $ACT_X, $ACT_Y).activities"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_056",
+    "category": "Category_3",
+    "formal_pattern": "Reachable Activity Set",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "Which activities are reachable from activity $ACT_X for object type $OT_A?",
+    "runtime_variables": ["$OT_A", "$ACT_X"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "$ACT_X in ocel.activities",
+      "object_type_has_events($OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_ocdfg", "required": true },
+        { "tool": "compute_transitive_closure", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "transitive_reachability",
+        "aggregation_applied": "none",
+        "result_type": "activity_list",
+        "lookup_path": "sorted(transitive_closure[$OT_A].reachable_from($ACT_X))"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_057",
+    "category": "Category_3",
+    "formal_pattern": "Predecessor Reachability Set",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "Which activities can reach activity $ACT_Y for object type $OT_A?",
+    "runtime_variables": ["$OT_A", "$ACT_Y"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "$ACT_Y in ocel.activities",
+      "object_type_has_events($OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_ocdfg", "required": true },
+        { "tool": "compute_transitive_closure", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "transitive_reachability",
+        "aggregation_applied": "none",
+        "result_type": "activity_list",
+        "lookup_path": "sorted(transitive_closure[$OT_A].can_reach($ACT_Y))"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_058",
+    "category": "Category_3",
+    "formal_pattern": "Reachability Through Required Intermediate Activity",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "Does a directed path from activity $ACT_X to activity $ACT_Y for object type $OT_A pass through activity $ACT_Z?",
+    "runtime_variables": ["$OT_A", "$ACT_X", "$ACT_Y", "$ACT_Z"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "$ACT_X in ocel.activities",
+      "$ACT_Y in ocel.activities",
+      "$ACT_Z in ocel.activities",
+      "$ACT_X != $ACT_Y",
+      "$ACT_X != $ACT_Z",
+      "$ACT_Y != $ACT_Z",
+      "path_exists($ACT_X, $ACT_Y, $OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_ocdfg", "required": true },
+        { "tool": "compute_path_existence", "required": true },
+        { "tool": "compute_transitive_closure", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "path_existence",
+        "aggregation_applied": "none",
+        "result_type": "boolean",
+        "lookup_path": "path_exists($ACT_X, $ACT_Z, $OT_A) and path_exists($ACT_Z, $ACT_Y, $OT_A)"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_059",
+    "category": "Category_3",
+    "formal_pattern": "Reachability Avoiding Excluded Activity",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "Does a directed path exist from activity $ACT_X to activity $ACT_Y for object type $OT_A without passing through activity $ACT_Z?",
+    "runtime_variables": ["$OT_A", "$ACT_X", "$ACT_Y", "$ACT_Z"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "$ACT_X in ocel.activities",
+      "$ACT_Y in ocel.activities",
+      "$ACT_Z in ocel.activities",
+      "$ACT_X != $ACT_Y",
+      "$ACT_X != $ACT_Z",
+      "$ACT_Y != $ACT_Z",
+      "path_exists($ACT_X, $ACT_Y, $OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_ocdfg", "required": true },
+        { "tool": "compute_path_existence", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "path_existence",
+        "aggregation_applied": "none",
+        "result_type": "boolean",
+        "lookup_path": "path_exists(remove_node(ocdfg[$OT_A], $ACT_Z), $ACT_X, $ACT_Y)"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_060",
+    "category": "Category_3",
+    "formal_pattern": "Conditional Succession Predicate",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "Does activity $ACT_X conditionally precede activity $ACT_Y for object type $OT_A in the transitive reachability relation?",
+    "runtime_variables": ["$OT_A", "$ACT_X", "$ACT_Y"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "$ACT_X in ocel.activities",
+      "$ACT_Y in ocel.activities",
+      "$ACT_X != $ACT_Y",
+      "object_type_has_events($OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_ocdfg", "required": true },
+        { "tool": "compute_transitive_closure", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "conditional_succession",
+        "aggregation_applied": "none",
+        "result_type": "boolean",
+        "lookup_path": "transitive_closure[$OT_A].reachable($ACT_X, $ACT_Y)"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_061",
+    "category": "Category_3",
+    "formal_pattern": "Mutual Reachability Predicate",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "Are activities $ACT_X and $ACT_Y mutually reachable for object type $OT_A?",
+    "runtime_variables": ["$OT_A", "$ACT_X", "$ACT_Y"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "$ACT_X in ocel.activities",
+      "$ACT_Y in ocel.activities",
+      "$ACT_X != $ACT_Y",
+      "object_type_has_events($OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_ocdfg", "required": true },
+        { "tool": "compute_transitive_closure", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "transitive_reachability",
+        "aggregation_applied": "none",
+        "result_type": "boolean",
+        "lookup_path": "transitive_closure[$OT_A].reachable($ACT_X, $ACT_Y) and transitive_closure[$OT_A].reachable($ACT_Y, $ACT_X)"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_062",
+    "category": "Category_3",
+    "formal_pattern": "Cycle Membership Predicate",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "Is activity $ACT_X part of a directed loop for object type $OT_A?",
+    "runtime_variables": ["$OT_A", "$ACT_X"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "$ACT_X in ocel.activities",
+      "object_type_has_events($OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_ocdfg", "required": true },
+        { "tool": "compute_loop_metrics", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "loop_existence",
+        "aggregation_applied": "none",
+        "result_type": "boolean",
+        "lookup_path": "loop_exists($ACT_X, $OT_A)"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_063",
+    "category": "Category_3",
+    "formal_pattern": "Self-Loop Existence",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "Does activity $ACT_X have a direct self-loop for object type $OT_A?",
+    "runtime_variables": ["$OT_A", "$ACT_X"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "$ACT_X in ocel.activities",
+      "object_type_has_events($OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_ocdfg", "required": true },
+        { "tool": "get_edge_metrics", "required": true },
+        { "tool": "compute_loop_metrics", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "loop_existence",
+        "aggregation_applied": "none",
+        "result_type": "boolean",
+        "lookup_path": "edge_exists($ACT_X, $ACT_X, $OT_A)"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_064",
+    "category": "Category_3",
+    "formal_pattern": "Loop Frequency at Activity",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "What is the loop frequency of activity $ACT_X for object type $OT_A?",
+    "runtime_variables": ["$OT_A", "$ACT_X"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "$ACT_X in ocel.activities",
+      "object_type_has_events($OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_ocdfg", "required": true },
+        { "tool": "compute_loop_metrics", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "loop_frequency",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "loop_metrics[$OT_A].activity[$ACT_X].frequency"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_065",
+    "category": "Category_3",
+    "formal_pattern": "Loop Activity Set",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "Which activities are part of at least one directed loop for object type $OT_A?",
+    "runtime_variables": ["$OT_A"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "object_type_has_events($OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_ocdfg", "required": true },
+        { "tool": "compute_loop_metrics", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "loop_existence",
+        "aggregation_applied": "none",
+        "result_type": "activity_list",
+        "lookup_path": "sorted(loop_metrics[$OT_A].activities.filter(activity => activity.loop_frequency > 0))"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_066",
+    "category": "Category_3",
+    "formal_pattern": "Maximum Loop Frequency Activity Selection",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "Which activity has the maximum loop frequency for object type $OT_A?",
+    "runtime_variables": ["$OT_A"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "object_type_has_events($OT_A)",
+      "at_least_two_activities_for_object_type($OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_ocdfg", "required": true },
+        { "tool": "compute_loop_metrics", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "loop_frequency",
+        "aggregation_applied": "none",
+        "result_type": "activity",
+        "lookup_path": "argmax_activity(loop_metrics[$OT_A].activities, metric => activity.loop_frequency, tie_breaker => activity_name_ascending)"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_067",
+    "category": "Category_3",
+    "formal_pattern": "Shortest Return Path Distance",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "What is the shortest return path distance from activity $ACT_X back to itself for object type $OT_A?",
+    "runtime_variables": ["$OT_A", "$ACT_X"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "$ACT_X in ocel.activities",
+      "loop_exists($ACT_X, $OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_ocdfg", "required": true },
+        { "tool": "compute_loop_metrics", "required": true },
+        { "tool": "compute_path_distance", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "path_distance",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "shortest_cycle_distance($OT_A, $ACT_X)"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_068",
+    "category": "Category_3",
+    "formal_pattern": "Reachability Asymmetry Predicate",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "Is activity $ACT_Y reachable from activity $ACT_X while activity $ACT_X is not reachable from activity $ACT_Y for object type $OT_A?",
+    "runtime_variables": ["$OT_A", "$ACT_X", "$ACT_Y"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "$ACT_X in ocel.activities",
+      "$ACT_Y in ocel.activities",
+      "$ACT_X != $ACT_Y",
+      "object_type_has_events($OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_ocdfg", "required": true },
+        { "tool": "compute_transitive_closure", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "transitive_reachability",
+        "aggregation_applied": "none",
+        "result_type": "boolean",
+        "lookup_path": "transitive_closure[$OT_A].reachable($ACT_X, $ACT_Y) and not transitive_closure[$OT_A].reachable($ACT_Y, $ACT_X)"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_069",
+    "category": "Category_3",
+    "formal_pattern": "Common Reachable Successor Set",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "Which activities are reachable from both activity $ACT_X and activity $ACT_Y for object type $OT_A?",
+    "runtime_variables": ["$OT_A", "$ACT_X", "$ACT_Y"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "$ACT_X in ocel.activities",
+      "$ACT_Y in ocel.activities",
+      "$ACT_X != $ACT_Y",
+      "object_type_has_events($OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_ocdfg", "required": true },
+        { "tool": "compute_transitive_closure", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "transitive_reachability",
+        "aggregation_applied": "none",
+        "result_type": "activity_list",
+        "lookup_path": "sorted(intersection(transitive_closure[$OT_A].reachable_from($ACT_X), transitive_closure[$OT_A].reachable_from($ACT_Y)))"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_070",
+    "category": "Category_3",
+    "formal_pattern": "Common Reachable Predecessor Set",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "Which activities can reach both activity $ACT_X and activity $ACT_Y for object type $OT_A?",
+    "runtime_variables": ["$OT_A", "$ACT_X", "$ACT_Y"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "$ACT_X in ocel.activities",
+      "$ACT_Y in ocel.activities",
+      "$ACT_X != $ACT_Y",
+      "object_type_has_events($OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_ocdfg", "required": true },
+        { "tool": "compute_transitive_closure", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "transitive_reachability",
+        "aggregation_applied": "none",
+        "result_type": "activity_list",
+        "lookup_path": "sorted(intersection(transitive_closure[$OT_A].can_reach($ACT_X), transitive_closure[$OT_A].can_reach($ACT_Y)))"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_071",
+    "category": "Category_3",
+    "formal_pattern": "Reachability Difference Set",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "Which activities are reachable from activity $ACT_X but not from activity $ACT_Y for object type $OT_A?",
+    "runtime_variables": ["$OT_A", "$ACT_X", "$ACT_Y"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "$ACT_X in ocel.activities",
+      "$ACT_Y in ocel.activities",
+      "$ACT_X != $ACT_Y",
+      "object_type_has_events($OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_ocdfg", "required": true },
+        { "tool": "compute_transitive_closure", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "transitive_reachability",
+        "aggregation_applied": "none",
+        "result_type": "activity_list",
+        "lookup_path": "sorted(difference(transitive_closure[$OT_A].reachable_from($ACT_X), transitive_closure[$OT_A].reachable_from($ACT_Y)))"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_072",
+    "category": "Category_3",
+    "formal_pattern": "Reachability Cardinality",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "How many activities are reachable from activity $ACT_X for object type $OT_A?",
+    "runtime_variables": ["$OT_A", "$ACT_X"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "$ACT_X in ocel.activities",
+      "object_type_has_events($OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_ocdfg", "required": true },
+        { "tool": "compute_transitive_closure", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "transitive_reachability",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "count(transitive_closure[$OT_A].reachable_from($ACT_X))"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_073",
+    "category": "Category_3",
+    "formal_pattern": "Maximum Reachability Activity Selection",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "Which activity can reach the largest number of activities for object type $OT_A?",
+    "runtime_variables": ["$OT_A"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "object_type_has_events($OT_A)",
+      "at_least_two_activities_for_object_type($OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_ocdfg", "required": true },
+        { "tool": "compute_transitive_closure", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "transitive_reachability",
+        "aggregation_applied": "none",
+        "result_type": "activity",
+        "lookup_path": "argmax_activity(ocdfg.nodes, metric => count(transitive_closure[$OT_A].reachable_from(activity)), tie_breaker => activity_name_ascending)"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_074",
+    "category": "Category_3",
+    "formal_pattern": "Unreachable Activity Pair Predicate",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "Are activity $ACT_X and activity $ACT_Y mutually unreachable for object type $OT_A?",
+    "runtime_variables": ["$OT_A", "$ACT_X", "$ACT_Y"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "$ACT_X in ocel.activities",
+      "$ACT_Y in ocel.activities",
+      "$ACT_X != $ACT_Y",
+      "object_type_has_events($OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_ocdfg", "required": true },
+        { "tool": "compute_transitive_closure", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "transitive_reachability",
+        "aggregation_applied": "none",
+        "result_type": "boolean",
+        "lookup_path": "not transitive_closure[$OT_A].reachable($ACT_X, $ACT_Y) and not transitive_closure[$OT_A].reachable($ACT_Y, $ACT_X)"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_075",
+    "category": "Category_3",
+    "formal_pattern": "Directed Edge Sequence on Shortest Path",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "Which directed transitions occur on the shortest directed path from activity $ACT_X to activity $ACT_Y for object type $OT_A?",
+    "runtime_variables": ["$OT_A", "$ACT_X", "$ACT_Y"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "$ACT_X in ocel.activities",
+      "$ACT_Y in ocel.activities",
+      "$ACT_X != $ACT_Y",
+      "path_exists($ACT_X, $ACT_Y, $OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_ocdfg", "required": true },
+        { "tool": "compute_path_distance", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "path_distance",
+        "aggregation_applied": "none",
+        "result_type": "edge_list",
+        "lookup_path": "shortest_path($OT_A, $ACT_X, $ACT_Y).edges"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_076",
+    "category": "Category_4",
+    "formal_pattern": "Object-Type Co-Occurrence Predicate",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "Do object type $OT_A and object type $OT_B co-occur in at least one event?",
+    "runtime_variables": ["$OT_A", "$OT_B"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "$OT_B in ocel.object_types",
+      "$OT_A != $OT_B"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_event_table", "required": true },
+        { "tool": "compute_object_interaction_metrics", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "object_cooccurrence",
+        "aggregation_applied": "none",
+        "result_type": "boolean",
+        "lookup_path": "object_types_cooccur($OT_A, $OT_B)"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_077",
+    "category": "Category_4",
+    "formal_pattern": "Object-Type Co-Occurrence Frequency",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "How many events contain both object type $OT_A and object type $OT_B?",
+    "runtime_variables": ["$OT_A", "$OT_B"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "$OT_B in ocel.object_types",
+      "$OT_A != $OT_B",
+      "object_types_cooccur($OT_A, $OT_B)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_event_table", "required": true },
+        { "tool": "compute_object_interaction_metrics", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "object_cooccurrence",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "count(ocel.events.filter(event => event.object_types.contains($OT_A) and event.object_types.contains($OT_B)))"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_078",
+    "category": "Category_4",
+    "formal_pattern": "Activity-Level Object-Type Co-Occurrence Predicate",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "Do object type $OT_A and object type $OT_B co-occur at activity $ACT_X?",
+    "runtime_variables": ["$OT_A", "$OT_B", "$ACT_X"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "$OT_B in ocel.object_types",
+      "$OT_A != $OT_B",
+      "$ACT_X in ocel.activities"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_event_table", "required": true },
+        { "tool": "compute_object_interaction_metrics", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "object_cooccurrence",
+        "aggregation_applied": "none",
+        "result_type": "boolean",
+        "lookup_path": "exists(ocel.events.filter(event => event.activity == $ACT_X and event.object_types.contains($OT_A) and event.object_types.contains($OT_B)))"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_079",
+    "category": "Category_4",
+    "formal_pattern": "Activity-Level Object-Type Co-Occurrence Frequency",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "How many events at activity $ACT_X contain both object type $OT_A and object type $OT_B?",
+    "runtime_variables": ["$OT_A", "$OT_B", "$ACT_X"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "$OT_B in ocel.object_types",
+      "$OT_A != $OT_B",
+      "$ACT_X in ocel.activities",
+      "object_types_cooccur($OT_A, $OT_B)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_event_table", "required": true },
+        { "tool": "compute_object_interaction_metrics", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "object_cooccurrence",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "count(ocel.events.filter(event => event.activity == $ACT_X and event.object_types.contains($OT_A) and event.object_types.contains($OT_B)))"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_080",
+    "category": "Category_4",
+    "formal_pattern": "Maximum Object-Type Co-Occurrence Activity",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "Which activity has the maximum co-occurrence frequency of object type $OT_A and object type $OT_B?",
+    "runtime_variables": ["$OT_A", "$OT_B"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "$OT_B in ocel.object_types",
+      "$OT_A != $OT_B",
+      "object_types_cooccur($OT_A, $OT_B)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_event_table", "required": true },
+        { "tool": "compute_object_interaction_metrics", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "object_cooccurrence",
+        "aggregation_applied": "none",
+        "result_type": "activity",
+        "lookup_path": "argmax_activity(ocel.activities, metric => count(ocel.events.filter(event => event.activity == activity and event.object_types.contains($OT_A) and event.object_types.contains($OT_B))), tie_breaker => activity_name_ascending)"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_081",
+    "category": "Category_4",
+    "formal_pattern": "Convergence Degree at Activity",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "What is the convergence degree of object type $OT_A at activity $ACT_X?",
+    "runtime_variables": ["$OT_A", "$ACT_X"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "$ACT_X in ocel.activities",
+      "object_type_has_events($OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_event_table", "required": true },
+        { "tool": "compute_object_interaction_metrics", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "convergence_degree",
+        "aggregation_applied": "none",
+        "result_type": "float",
+        "lookup_path": "object_interactions.convergence_degree(activity == $ACT_X, object_type == $OT_A)"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_082",
+    "category": "Category_4",
+    "formal_pattern": "Divergence Degree at Activity",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "What is the divergence degree of object type $OT_A at activity $ACT_X?",
+    "runtime_variables": ["$OT_A", "$ACT_X"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "$ACT_X in ocel.activities",
+      "object_type_has_events($OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_event_table", "required": true },
+        { "tool": "compute_object_interaction_metrics", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "divergence_degree",
+        "aggregation_applied": "none",
+        "result_type": "float",
+        "lookup_path": "object_interactions.divergence_degree(activity == $ACT_X, object_type == $OT_A)"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_083",
+    "category": "Category_4",
+    "formal_pattern": "Maximum Convergence Activity Selection",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "Which activity has the maximum convergence degree for object type $OT_A?",
+    "runtime_variables": ["$OT_A"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "object_type_has_events($OT_A)",
+      "at_least_two_activities_for_object_type($OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_event_table", "required": true },
+        { "tool": "compute_object_interaction_metrics", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "convergence_degree",
+        "aggregation_applied": "none",
+        "result_type": "activity",
+        "lookup_path": "argmax_activity(ocel.activities, metric => object_interactions.convergence_degree(activity == activity, object_type == $OT_A), tie_breaker => activity_name_ascending)"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_084",
+    "category": "Category_4",
+    "formal_pattern": "Maximum Divergence Activity Selection",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "Which activity has the maximum divergence degree for object type $OT_A?",
+    "runtime_variables": ["$OT_A"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "object_type_has_events($OT_A)",
+      "at_least_two_activities_for_object_type($OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_event_table", "required": true },
+        { "tool": "compute_object_interaction_metrics", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "divergence_degree",
+        "aggregation_applied": "none",
+        "result_type": "activity",
+        "lookup_path": "argmax_activity(ocel.activities, metric => object_interactions.divergence_degree(activity == activity, object_type == $OT_A), tie_breaker => activity_name_ascending)"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_085",
+    "category": "Category_4",
+    "formal_pattern": "Convergence Threshold Predicate",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "Does activity $ACT_X have a strictly positive convergence degree for object type $OT_A?",
+    "runtime_variables": ["$OT_A", "$ACT_X"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "$ACT_X in ocel.activities",
+      "object_type_has_events($OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_event_table", "required": true },
+        { "tool": "compute_object_interaction_metrics", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "convergence_degree",
+        "aggregation_applied": "none",
+        "result_type": "boolean",
+        "lookup_path": "object_interactions.convergence_degree(activity == $ACT_X, object_type == $OT_A) > 0"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_086",
+    "category": "Category_4",
+    "formal_pattern": "Divergence Threshold Predicate",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "Does activity $ACT_X have a strictly positive divergence degree for object type $OT_A?",
+    "runtime_variables": ["$OT_A", "$ACT_X"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "$ACT_X in ocel.activities",
+      "object_type_has_events($OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_event_table", "required": true },
+        { "tool": "compute_object_interaction_metrics", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "divergence_degree",
+        "aggregation_applied": "none",
+        "result_type": "boolean",
+        "lookup_path": "object_interactions.divergence_degree(activity == $ACT_X, object_type == $OT_A) > 0"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_087",
+    "category": "Category_4",
+    "formal_pattern": "Convergence-Divergence Dominance Predicate",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "Is the convergence degree of object type $OT_A at activity $ACT_X greater than its divergence degree at the same activity?",
+    "runtime_variables": ["$OT_A", "$ACT_X"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "$ACT_X in ocel.activities",
+      "object_type_has_events($OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_event_table", "required": true },
+        { "tool": "compute_object_interaction_metrics", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "convergence_degree",
+        "aggregation_applied": "none",
+        "result_type": "boolean",
+        "lookup_path": "object_interactions.convergence_degree(activity == $ACT_X, object_type == $OT_A) > object_interactions.divergence_degree(activity == $ACT_X, object_type == $OT_A)"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_088",
+    "category": "Category_4",
+    "formal_pattern": "Divergence-Convergence Dominance Predicate",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "Is the divergence degree of object type $OT_A at activity $ACT_X greater than its convergence degree at the same activity?",
+    "runtime_variables": ["$OT_A", "$ACT_X"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "$ACT_X in ocel.activities",
+      "object_type_has_events($OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_event_table", "required": true },
+        { "tool": "compute_object_interaction_metrics", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "divergence_degree",
+        "aggregation_applied": "none",
+        "result_type": "boolean",
+        "lookup_path": "object_interactions.divergence_degree(activity == $ACT_X, object_type == $OT_A) > object_interactions.convergence_degree(activity == $ACT_X, object_type == $OT_A)"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_089",
+    "category": "Category_4",
+    "formal_pattern": "Synchronized Activity Set for Object-Type Pair",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "Which activities synchronize object type $OT_A and object type $OT_B?",
+    "runtime_variables": ["$OT_A", "$OT_B"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "$OT_B in ocel.object_types",
+      "$OT_A != $OT_B",
+      "object_types_cooccur($OT_A, $OT_B)",
+      "synchronization_observable($OT_A, $OT_B)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_event_table", "required": true },
+        { "tool": "compute_object_interaction_metrics", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "object_cooccurrence",
+        "aggregation_applied": "none",
+        "result_type": "activity_list",
+        "lookup_path": "sorted(ocel.activities.filter(activity => exists(ocel.events.filter(event => event.activity == activity and event.object_types.contains($OT_A) and event.object_types.contains($OT_B)))))"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_090",
+    "category": "Category_4",
+    "formal_pattern": "Object-Type Pair with Maximum Activity Co-Occurrence",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "Which object-type pair has the maximum co-occurrence frequency at activity $ACT_X?",
+    "runtime_variables": ["$ACT_X"],
+    "preconditions": [
+      "$ACT_X in ocel.activities",
+      "at_least_two_activities_for_object_type($OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_event_table", "required": true },
+        { "tool": "compute_object_interaction_metrics", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "object_cooccurrence",
+        "aggregation_applied": "none",
+        "result_type": "object_type_pair",
+        "lookup_path": "argmax_object_type_pair(all_object_type_pairs(ocel.object_types), metric => count(ocel.events.filter(event => event.activity == $ACT_X and event.object_types.contains(pair.first) and event.object_types.contains(pair.second))), tie_breaker => object_type_pair_name_ascending)"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_091",
+    "category": "Category_4",
+    "formal_pattern": "Object-Type Pair Co-Occurrence Comparison",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "Is the co-occurrence frequency of object type $OT_A and object type $OT_B at activity $ACT_X greater than their co-occurrence frequency at activity $ACT_Y?",
+    "runtime_variables": ["$OT_A", "$OT_B", "$ACT_X", "$ACT_Y"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "$OT_B in ocel.object_types",
+      "$OT_A != $OT_B",
+      "$ACT_X in ocel.activities",
+      "$ACT_Y in ocel.activities",
+      "$ACT_X != $ACT_Y",
+      "object_types_cooccur($OT_A, $OT_B)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_event_table", "required": true },
+        { "tool": "compute_object_interaction_metrics", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "object_cooccurrence",
+        "aggregation_applied": "none",
+        "result_type": "boolean",
+        "lookup_path": "count(ocel.events.filter(event => event.activity == $ACT_X and event.object_types.contains($OT_A) and event.object_types.contains($OT_B))) > count(ocel.events.filter(event => event.activity == $ACT_Y and event.object_types.contains($OT_A) and event.object_types.contains($OT_B)))"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_092",
+    "category": "Category_4",
+    "formal_pattern": "Aggregated Synchronization Latency Predicate",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "Is the $SIGMA synchronization latency between object type $OT_A and object type $OT_B at activity $ACT_X defined?",
+    "runtime_variables": ["$OT_A", "$OT_B", "$ACT_X", "$SIGMA"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "$OT_B in ocel.object_types",
+      "$OT_A != $OT_B",
+      "$ACT_X in ocel.activities",
+      "object_types_cooccur($OT_A, $OT_B)",
+      "synchronization_observable($OT_A, $OT_B)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_event_table", "required": true },
+        { "tool": "compute_synchronization_latency", "required": true },
+        { "tool": "aggregate_metric", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "synchronization_latency",
+        "aggregation_applied": "$SIGMA",
+        "result_type": "boolean",
+        "lookup_path": "is_defined(aggregate($SIGMA, event_table.synchronization_latency(activity == $ACT_X, object_types == ($OT_A,$OT_B))))"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_093",
+    "category": "Category_4",
+    "formal_pattern": "Synchronization Latency Activity Comparison",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "Is the $SIGMA synchronization latency between object type $OT_A and object type $OT_B at activity $ACT_X greater than at activity $ACT_Y?",
+    "runtime_variables": ["$OT_A", "$OT_B", "$ACT_X", "$ACT_Y", "$SIGMA"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "$OT_B in ocel.object_types",
+      "$OT_A != $OT_B",
+      "$ACT_X in ocel.activities",
+      "$ACT_Y in ocel.activities",
+      "$ACT_X != $ACT_Y",
+      "object_types_cooccur($OT_A, $OT_B)",
+      "synchronization_observable($OT_A, $OT_B)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_event_table", "required": true },
+        { "tool": "compute_synchronization_latency", "required": true },
+        { "tool": "aggregate_metric", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "synchronization_latency",
+        "aggregation_applied": "$SIGMA",
+        "result_type": "boolean",
+        "lookup_path": "aggregate($SIGMA, event_table.synchronization_latency(activity == $ACT_X, object_types == ($OT_A,$OT_B))) > aggregate($SIGMA, event_table.synchronization_latency(activity == $ACT_Y, object_types == ($OT_A,$OT_B)))"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_094",
+    "category": "Category_4",
+    "formal_pattern": "Response-Like Constraint Satisfaction",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "Is the formal response-like constraint from activity $ACT_X to activity $ACT_Y satisfied for object type $OT_A?",
+    "runtime_variables": ["$OT_A", "$ACT_X", "$ACT_Y"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "$ACT_X in ocel.activities",
+      "$ACT_Y in ocel.activities",
+      "$ACT_X != $ACT_Y",
+      "trace_exists_for_object_type($OT_A)",
+      "declare_constraint_applicable($ACT_X, $ACT_Y, $OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_object_centric_traces", "required": true },
+        { "tool": "compute_declare_violations", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "constraint_satisfaction_boolean",
+        "aggregation_applied": "none",
+        "result_type": "boolean",
+        "lookup_path": "declare_constraints.response(adapter_flattened_traces[$OT_A], activation == $ACT_X, target == $ACT_Y).is_satisfied"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_095",
+    "category": "Category_4",
+    "formal_pattern": "Response-Like Constraint Violation Count",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "How many violations occur for the formal response-like constraint from activity $ACT_X to activity $ACT_Y for object type $OT_A?",
+    "runtime_variables": ["$OT_A", "$ACT_X", "$ACT_Y"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "$ACT_X in ocel.activities",
+      "$ACT_Y in ocel.activities",
+      "$ACT_X != $ACT_Y",
+      "trace_exists_for_object_type($OT_A)",
+      "declare_constraint_applicable($ACT_X, $ACT_Y, $OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_object_centric_traces", "required": true },
+        { "tool": "compute_declare_violations", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "declare_violation_count",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "declare_constraints.response(adapter_flattened_traces[$OT_A], activation == $ACT_X, target == $ACT_Y).violation_count"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_096",
+    "category": "Category_4",
+    "formal_pattern": "Precedence-Like Constraint Satisfaction",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "Is the formal precedence-like constraint from activity $ACT_X to activity $ACT_Y satisfied for object type $OT_A?",
+    "runtime_variables": ["$OT_A", "$ACT_X", "$ACT_Y"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "$ACT_X in ocel.activities",
+      "$ACT_Y in ocel.activities",
+      "$ACT_X != $ACT_Y",
+      "trace_exists_for_object_type($OT_A)",
+      "declare_constraint_applicable($ACT_X, $ACT_Y, $OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_object_centric_traces", "required": true },
+        { "tool": "compute_declare_violations", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "constraint_satisfaction_boolean",
+        "aggregation_applied": "none",
+        "result_type": "boolean",
+        "lookup_path": "declare_constraints.precedence(adapter_flattened_traces[$OT_A], antecedent == $ACT_X, consequent == $ACT_Y).is_satisfied"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_097",
+    "category": "Category_4",
+    "formal_pattern": "Precedence-Like Constraint Violation Count",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "How many violations occur for the formal precedence-like constraint from activity $ACT_X to activity $ACT_Y for object type $OT_A?",
+    "runtime_variables": ["$OT_A", "$ACT_X", "$ACT_Y"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "$ACT_X in ocel.activities",
+      "$ACT_Y in ocel.activities",
+      "$ACT_X != $ACT_Y",
+      "trace_exists_for_object_type($OT_A)",
+      "declare_constraint_applicable($ACT_X, $ACT_Y, $OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_object_centric_traces", "required": true },
+        { "tool": "compute_declare_violations", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "declare_violation_count",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "declare_constraints.precedence(adapter_flattened_traces[$OT_A], antecedent == $ACT_X, consequent == $ACT_Y).violation_count"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_098",
+    "category": "Category_4",
+    "formal_pattern": "Not-Coexistence Constraint Satisfaction",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "Is the formal not-coexistence constraint between activity $ACT_X and activity $ACT_Y satisfied for object type $OT_A?",
+    "runtime_variables": ["$OT_A", "$ACT_X", "$ACT_Y"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "$ACT_X in ocel.activities",
+      "$ACT_Y in ocel.activities",
+      "$ACT_X != $ACT_Y",
+      "trace_exists_for_object_type($OT_A)",
+      "declare_constraint_applicable($ACT_X, $ACT_Y, $OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_object_centric_traces", "required": true },
+        { "tool": "compute_declare_violations", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "constraint_satisfaction_boolean",
+        "aggregation_applied": "none",
+        "result_type": "boolean",
+        "lookup_path": "declare_constraints.not_coexistence(adapter_flattened_traces[$OT_A], first == $ACT_X, second == $ACT_Y).is_satisfied"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_099",
+    "category": "Category_4",
+    "formal_pattern": "Not-Coexistence Constraint Violation Count",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "How many violations occur for the formal not-coexistence constraint between activity $ACT_X and activity $ACT_Y for object type $OT_A?",
+    "runtime_variables": ["$OT_A", "$ACT_X", "$ACT_Y"],
+    "preconditions": [
+      "$OT_A in ocel.object_types",
+      "$ACT_X in ocel.activities",
+      "$ACT_Y in ocel.activities",
+      "$ACT_X != $ACT_Y",
+      "trace_exists_for_object_type($OT_A)",
+      "declare_constraint_applicable($ACT_X, $ACT_Y, $OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_object_centric_traces", "required": true },
+        { "tool": "compute_declare_violations", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "declare_violation_count",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "declare_constraints.not_coexistence(adapter_flattened_traces[$OT_A], first == $ACT_X, second == $ACT_Y).violation_count"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_100",
+    "category": "Category_4",
+    "formal_pattern": "Object-Type Interaction Coverage Set",
+    "dimensions_tested": ["factual_correctness", "completeness", "robustness"],
+    "analyst_question_template": "Which object-type pairs co-occur at activity $ACT_X?",
+    "runtime_variables": ["$ACT_X"],
+    "preconditions": ["$ACT_X in ocel.activities"],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        { "tool": "fetch_ocel_metadata", "required": true },
+        { "tool": "validate_runtime_variables", "required": true },
+        { "tool": "fetch_event_table", "required": true },
+        { "tool": "compute_object_interaction_metrics", "required": true }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "object_cooccurrence",
+        "aggregation_applied": "none",
+        "result_type": "object_type_pair",
+        "lookup_path": "sorted_object_type_pairs(all_object_type_pairs(ocel.object_types).filter(pair => exists(ocel.events.filter(event => event.activity == $ACT_X and event.object_types.contains(pair.first) and event.object_types.contains(pair.second)))))"
+      }
+    }
+  }
+]
