@@ -243,6 +243,6 @@ Future work may include:
 
 ## Authorship and Reuse
 
-This repository documents the initial OCPM 100 Template Benchmark concept, template catalog, and reference-generation approach by Stephanie Motz.
+This repository documents the initial OCPM 100 Template Benchmark concept, template catalog, and reference-generation approach.
 
 If you reuse the template structure, benchmark categories, runtime-variable instantiation approach, reference-generation logic, documentation, or code, please cite this repository.
