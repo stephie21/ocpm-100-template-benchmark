@@ -9,6 +9,7 @@ from evaluation.handlers.category_1 import Category1Handler
 from evaluation.handlers.category_2 import Category2Handler
 from evaluation.handlers.category_3 import Category3Handler
 from evaluation.handlers.category_4 import Category4Handler
+from evaluation.handlers.dispatch import execute_reference_metric
 from evaluation.ingestion.ocel_loader import load_ocel
 from evaluation.preconditions.engine import PreconditionEngine
 from evaluation.schemas.benchmark import BenchmarkTemplate
@@ -90,7 +91,9 @@ class BenchmarkCompiler:
                 if not handler:
                     records.append(EvaluationRecord(template_id=template.template_id, category=template.category, instantiated_question=instance.analyst_question, runtime_variables_used=instance.runtime_variables_used, precondition_status=status, handler_status="unsupported", value=None, messages=["No handler for category"]))
                     continue
-                result=handler.execute(template.analyst_question_template, model, instance.runtime_variables_used)
+                result=execute_reference_metric(template, model, instance.runtime_variables_used, self.handlers)
+                if result["status"] == "success" and result["value"] is None:
+                    result = {"status": "skipped", "value": None, "message": result["message"]}
                 records.append(EvaluationRecord(template_id=template.template_id, category=template.category, instantiated_question=instance.analyst_question, runtime_variables_used=instance.runtime_variables_used, precondition_status=status, handler_status=result["status"], value=result["value"], messages=[result["message"]]))
-        summary={"total_templates": len(templates), "total_records": len(records), "passed": sum(1 for r in records if r.precondition_status=="passed" and r.handler_status=="success"), "failed": sum(1 for r in records if r.handler_status=="error"), "skipped": sum(1 for r in records if r.precondition_status!="passed" or r.handler_status=="skipped")}
+        summary={"total_templates": len(templates), "total_records": len(records), "passed": sum(1 for r in records if r.precondition_status=="passed" and r.handler_status=="success" and r.value is not None), "failed": sum(1 for r in records if r.handler_status=="error"), "skipped": sum(1 for r in records if r.precondition_status!="passed" or r.handler_status in {"skipped", "unsupported"} or (r.handler_status=="success" and r.value is None))}
         return EvaluationReport(summary=summary, details=records)

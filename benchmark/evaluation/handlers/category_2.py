@@ -31,10 +31,11 @@ class Category2Handler:
             act=bindings["$ACT_X"]
             return ok(len(unique_objects_for_activity(model,act)), f"Counted unique objects for {act}")
         if question_template in {self.EDGE_COUNT_QUESTION,self.EDGE_DURATION_QUESTION,self.EDGE_EXISTS_QUESTION,self.EDGE_LABEL_QUESTION,self.OUTGOING_EDGES_QUESTION,self.FALSE_EDGE_QUESTION,self.BRANCHING_RATIO_QUESTION,self.OBJECT_INTERACTION_QUESTION}:
-            for name in ("$ACT_X","$ACT_Y","$OT_A"):
+            required=("$ACT_X","$OT_A") if question_template == self.OUTGOING_EDGES_QUESTION else ("$ACT_X","$ACT_Y","$OT_A")
+            for name in required:
                 missing=need(bindings,name)
                 if missing: return missing
-            x=bindings["$ACT_X"]; y=bindings["$ACT_Y"]; ot=bindings["$OT_A"]
+            x=bindings["$ACT_X"]; y=bindings.get("$ACT_Y", ""); ot=bindings["$OT_A"]
             if question_template == self.EDGE_COUNT_QUESTION: val=edge_count(model,x,y,ot)
             elif question_template == self.EDGE_DURATION_QUESTION:
                 vals=edge_durations(model,x,y,ot); val=mean(vals) if vals else None

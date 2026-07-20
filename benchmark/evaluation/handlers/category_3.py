@@ -22,10 +22,11 @@ class Category3Handler:
         bindings=bindings or {}
         if question_template not in self.supported_templates():
             return err(f"Unsupported Category 3 question template: {question_template}")
-        for name in ("$ACT_X","$ACT_Y","$OT_A"):
+        required=("$ACT_X","$OT_A") if question_template in {self.DOWNSTREAM_QUESTION,self.ACTIVITY_COUNT_QUESTION,self.SUBGRAPH_QUESTION} else ("$ACT_X","$ACT_Y","$OT_A")
+        for name in required:
             missing=need(bindings,name)
             if missing: return missing
-        x=bindings["$ACT_X"]; y=bindings["$ACT_Y"]; ot=bindings["$OT_A"]
+        x=bindings["$ACT_X"]; y=bindings.get("$ACT_Y", ""); ot=bindings["$OT_A"]
         if question_template == self.DIRECTLY_FOLLOWS_QUESTION:
             val=edge_count(model,y,x,ot)
         elif question_template == self.NOT_REACHABLE_QUESTION:

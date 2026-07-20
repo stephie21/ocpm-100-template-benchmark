@@ -11,6 +11,7 @@ from evaluation.handlers.category_1 import Category1Handler
 from evaluation.handlers.category_2 import Category2Handler
 from evaluation.handlers.category_3 import Category3Handler
 from evaluation.handlers.category_4 import Category4Handler
+from evaluation.handlers.dispatch import execute_reference_metric
 from evaluation.ingestion.ocel_loader import load_ocel
 from evaluation.preconditions.engine import PreconditionEngine
 from evaluation.templates.instantiation_engine import VariableInstantiationEngine
@@ -50,7 +51,7 @@ class BenchmarkOrchestrator:
                         final_status="skipped_unsupported_metric"
                         row["error_or_skip_reason"]="Unsupported aggregation 'none'"
                     else:
-                        result=handler.execute(template.analyst_question_template, model, instance.runtime_variables_used) if handler else {"status":"error","value":None,"message":"unsupported category"}
+                        result=execute_reference_metric(template, model, instance.runtime_variables_used, self.handlers)
                         if result["status"] == "success" and result["value"] is not None:
                             final_status="computed"
                         elif result["status"] == "success":
