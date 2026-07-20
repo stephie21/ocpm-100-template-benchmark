@@ -229,7 +229,9 @@ Not claimed as complete yet:
 - formal G_factual implementation
 - formal F_tool implementation
 - complete real-agent benchmark execution
-
+  
+> Status: Work in progress.
+> This repository currently documents a 100-template OCPM/OC-DFG benchmark specification and its reference-generation design. Not all template semantics are implemented or executable yet.
 ## Planned Extensions
 
 Future work may include:
