@@ -1,0 +1,70 @@
+{
+  "events": [
+    {
+      "id": "p1a",
+      "activity": "A Start",
+      "timestamp": "2024-01-01T00:00:00+00:00"
+    },
+    {
+      "id": "p1b",
+      "activity": "B Middle",
+      "timestamp": "2024-01-01T01:00:00+00:00"
+    },
+    {
+      "id": "p1d",
+      "activity": "D End",
+      "timestamp": "2024-01-01T02:00:00+00:00"
+    },
+    {
+      "id": "p2a",
+      "activity": "A Start",
+      "timestamp": "2024-01-02T00:00:00+00:00"
+    },
+    {
+      "id": "p2c",
+      "activity": "C Branch",
+      "timestamp": "2024-01-02T01:15:00+00:00"
+    },
+    {
+      "id": "p2d",
+      "activity": "D End",
+      "timestamp": "2024-01-02T03:15:00+00:00"
+    }
+  ],
+  "objects": [
+    {
+      "id": "o1",
+      "type": "Order"
+    },
+    {
+      "id": "o2",
+      "type": "Order"
+    }
+  ],
+  "relations": [
+    {
+      "event_id": "p1a",
+      "object_id": "o1"
+    },
+    {
+      "event_id": "p1b",
+      "object_id": "o1"
+    },
+    {
+      "event_id": "p1d",
+      "object_id": "o1"
+    },
+    {
+      "event_id": "p2a",
+      "object_id": "o2"
+    },
+    {
+      "event_id": "p2c",
+      "object_id": "o2"
+    },
+    {
+      "event_id": "p2d",
+      "object_id": "o2"
+    }
+  ]
+}

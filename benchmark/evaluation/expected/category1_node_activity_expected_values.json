@@ -1,0 +1,80 @@
+{
+  "activities": [
+    "A Start",
+    "B Middle",
+    "D End",
+    "C Branch"
+  ],
+  "assertions": {
+    "end_frequency(D End)": 2,
+    "in_degree(D End)": 2,
+    "out_degree(A Start)": 2,
+    "start_frequency(A Start)": 2,
+    "zero_in_degree": [
+      "A Start"
+    ],
+    "zero_out_degree": [
+      "D End"
+    ]
+  },
+  "directly_follows": {
+    "Order": [
+      {
+        "count": 1,
+        "object_ids": [
+          "o1"
+        ],
+        "source": "A Start",
+        "target": "B Middle"
+      },
+      {
+        "count": 1,
+        "object_ids": [
+          "o1"
+        ],
+        "source": "B Middle",
+        "target": "D End"
+      },
+      {
+        "count": 1,
+        "object_ids": [
+          "o2"
+        ],
+        "source": "A Start",
+        "target": "C Branch"
+      },
+      {
+        "count": 1,
+        "object_ids": [
+          "o2"
+        ],
+        "source": "C Branch",
+        "target": "D End"
+      }
+    ]
+  },
+  "event_count": 6,
+  "object_count": 2,
+  "object_types": [
+    "Order"
+  ],
+  "objects": [
+    {
+      "object_id": "o1",
+      "object_type": "Order"
+    },
+    {
+      "object_id": "o2",
+      "object_type": "Order"
+    }
+  ],
+  "relation_count": 6,
+  "timestamps": {
+    "e1": "2024-01-01T00:00:00+00:00",
+    "e2": "2024-01-01T01:00:00+00:00",
+    "e3": "2024-01-01T02:00:00+00:00",
+    "e4": "2024-01-02T00:00:00+00:00",
+    "e5": "2024-01-02T01:30:00+00:00",
+    "e6": "2024-01-02T03:00:00+00:00"
+  }
+}

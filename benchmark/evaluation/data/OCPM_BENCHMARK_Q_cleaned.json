@@ -1,0 +1,3582 @@
+[
+  {
+    "template_id": "OCPM_GEN_001",
+    "category": "Category_1",
+    "formal_pattern": "out_degree(activity=$ACT_X, object_type=$OT_A)",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "What is the out-degree of activity $ACT_X for object type $OT_A in the OC-DFG?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X"
+    ],
+    "preconditions": [
+      "object_type_exists($OT_A)",
+      "activity_exists_for_type($ACT_X,$OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        },
+        {
+          "tool": "compute_node_metrics",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "node_out_degree",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "ocdfg.nodes[$ACT_X].metrics[$OT_A].out_degree"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_002",
+    "category": "Category_1",
+    "formal_pattern": "in_degree(activity=$ACT_X, object_type=$OT_A)",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "What is the in-degree of activity $ACT_X for object type $OT_A in the OC-DFG?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X"
+    ],
+    "preconditions": [
+      "object_type_exists($OT_A)",
+      "activity_exists_for_type($ACT_X,$OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        },
+        {
+          "tool": "compute_node_metrics",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "node_in_degree",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "ocdfg.nodes[$ACT_X].metrics[$OT_A].in_degree"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_003",
+    "category": "Category_1",
+    "formal_pattern": "start_frequency(activity=$ACT_X, object_type=$OT_A)",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "How often does activity $ACT_X start an object of type $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X"
+    ],
+    "preconditions": [
+      "object_type_exists($OT_A)",
+      "activity_exists_for_type($ACT_X,$OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        },
+        {
+          "tool": "compute_node_metrics",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "start_frequency",
+        "aggregation_applied": "count",
+        "result_type": "integer",
+        "lookup_path": "ocdfg.nodes[$ACT_X].metrics[$OT_A].start_frequency"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_004",
+    "category": "Category_1",
+    "formal_pattern": "node_weight(activity=$ACT_X, object_type=$OT_A)",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "How often does activity $ACT_X occur for object type $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X"
+    ],
+    "preconditions": [
+      "object_type_exists($OT_A)",
+      "activity_exists_for_type($ACT_X,$OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        },
+        {
+          "tool": "compute_node_metrics",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "node_weight",
+        "aggregation_applied": "count",
+        "result_type": "integer",
+        "lookup_path": "ocdfg.nodes[$ACT_X].metrics[$OT_A].event_count"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_005",
+    "category": "Category_1",
+    "formal_pattern": "end_frequency(activity=$ACT_X, object_type=$OT_A)",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "How often does activity $ACT_X end an object of type $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X"
+    ],
+    "preconditions": [
+      "object_type_exists($OT_A)",
+      "activity_exists_for_type($ACT_X,$OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        },
+        {
+          "tool": "compute_node_metrics",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "end_frequency",
+        "aggregation_applied": "count",
+        "result_type": "integer",
+        "lookup_path": "ocdfg.nodes[$ACT_X].metrics[$OT_A].end_frequency"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_006",
+    "category": "Category_1",
+    "formal_pattern": "object_frequency(object_type=$OT_A)",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "How many objects of type $OT_A occur in the log?",
+    "runtime_variables": [
+      "$OT_A"
+    ],
+    "preconditions": [
+      "object_type_exists($OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        },
+        {
+          "tool": "compute_node_metrics",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "object_frequency",
+        "aggregation_applied": "count",
+        "result_type": "integer",
+        "lookup_path": "ocel.objects.by_type[$OT_A].count"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_007",
+    "category": "Category_1",
+    "formal_pattern": "min_activity(node_weight, object_type=$OT_A)",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "What is the minimum node weight over all activities for object type $OT_A?",
+    "runtime_variables": [
+      "$OT_A"
+    ],
+    "preconditions": [
+      "object_type_exists($OT_A)",
+      "has_activities_for_type($OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        },
+        {
+          "tool": "compute_node_metrics",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "min_node_weight",
+        "aggregation_applied": "min",
+        "result_type": "integer",
+        "lookup_path": "handler_derived: Category1Handler.min_node_weight"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_008",
+    "category": "Category_1",
+    "formal_pattern": "max_activity(node_weight, object_type=$OT_A)",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "What is the maximum node weight over all activities for object type $OT_A?",
+    "runtime_variables": [
+      "$OT_A"
+    ],
+    "preconditions": [
+      "object_type_exists($OT_A)",
+      "has_activities_for_type($OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        },
+        {
+          "tool": "compute_node_metrics",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "max_node_weight",
+        "aggregation_applied": "max",
+        "result_type": "integer",
+        "lookup_path": "handler_derived: Category1Handler.max_node_weight"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_009",
+    "category": "Category_1",
+    "formal_pattern": "argmax_activity(node_weight, object_type=$OT_A)",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "Which activity has the highest node weight for object type $OT_A?",
+    "runtime_variables": [
+      "$OT_A"
+    ],
+    "preconditions": [
+      "object_type_exists($OT_A)",
+      "has_activities_for_type($OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        },
+        {
+          "tool": "compute_node_metrics",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "argmax_node_weight_activity",
+        "aggregation_applied": "argmax",
+        "result_type": "string",
+        "lookup_path": "handler_derived: Category1Handler.argmax_node_weight"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_010",
+    "category": "Category_1",
+    "formal_pattern": "argmin_activity(in_degree, object_type=$OT_A)",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "Which activity has the lowest in-degree for object type $OT_A?",
+    "runtime_variables": [
+      "$OT_A"
+    ],
+    "preconditions": [
+      "object_type_exists($OT_A)",
+      "has_activities_for_type($OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        },
+        {
+          "tool": "compute_node_metrics",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "argmin_in_degree_activity",
+        "aggregation_applied": "argmin",
+        "result_type": "string",
+        "lookup_path": "handler_derived: Category1Handler.argmin_in_degree"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_011",
+    "category": "Category_1",
+    "formal_pattern": "zero_set(in_degree, object_type=$OT_A)",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "Which activities have zero in-degree for object type $OT_A?",
+    "runtime_variables": [
+      "$OT_A"
+    ],
+    "preconditions": [
+      "object_type_exists($OT_A)",
+      "has_activities_for_type($OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        },
+        {
+          "tool": "compute_node_metrics",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "zero_in_degree_activities",
+        "aggregation_applied": "set_derived",
+        "result_type": "set",
+        "lookup_path": "ocdfg.object_types[$OT_A].nodes.filter(in_degree==0).activities"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_012",
+    "category": "Category_1",
+    "formal_pattern": "zero_set(out_degree, object_type=$OT_A)",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "Which activities have zero out-degree for object type $OT_A?",
+    "runtime_variables": [
+      "$OT_A"
+    ],
+    "preconditions": [
+      "object_type_exists($OT_A)",
+      "has_activities_for_type($OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        },
+        {
+          "tool": "compute_node_metrics",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "zero_out_degree_activities",
+        "aggregation_applied": "set_derived",
+        "result_type": "set",
+        "lookup_path": "ocdfg.object_types[$OT_A].nodes.filter(out_degree==0).activities"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_013",
+    "category": "Category_1",
+    "formal_pattern": "avg_activity(node_weight, object_type=$OT_A)",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "What is the average node weight across activities for object type $OT_A?",
+    "runtime_variables": [
+      "$OT_A"
+    ],
+    "preconditions": [
+      "object_type_exists($OT_A)",
+      "has_activities_for_type($OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        },
+        {
+          "tool": "compute_node_metrics",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "avg_node_weight",
+        "aggregation_applied": "avg",
+        "result_type": "float",
+        "lookup_path": "handler_derived: Category1Handler.avg_node_weight"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_014",
+    "category": "Category_1",
+    "formal_pattern": "sum_activity(node_weight, object_type=$OT_A)",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "What is the sum of node weights across activities for object type $OT_A?",
+    "runtime_variables": [
+      "$OT_A"
+    ],
+    "preconditions": [
+      "object_type_exists($OT_A)",
+      "has_activities_for_type($OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        },
+        {
+          "tool": "compute_node_metrics",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "sum_node_weight",
+        "aggregation_applied": "sum",
+        "result_type": "integer",
+        "lookup_path": "handler_derived: Category1Handler.sum_node_weight"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_015",
+    "category": "Category_1",
+    "formal_pattern": "compare(node_weight($ACT_X), node_weight($ACT_Y), object_type=$OT_A)",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "Does activity $ACT_X occur more often than activity $ACT_Y for object type $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X",
+      "$ACT_Y"
+    ],
+    "preconditions": [
+      "object_type_exists($OT_A)",
+      "activity_exists_for_type($ACT_X,$OT_A)",
+      "activity_exists_for_type($ACT_Y,$OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        },
+        {
+          "tool": "compute_node_metrics",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "activity_frequency_comparison",
+        "aggregation_applied": "comparison",
+        "result_type": "boolean",
+        "lookup_path": "handler_derived: Category1Handler.compare_node_weight"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_016",
+    "category": "Category_1",
+    "formal_pattern": "compare(out_degree($ACT_X), out_degree($ACT_Y), object_type=$OT_A)",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "Does activity $ACT_X have a higher out-degree than activity $ACT_Y for object type $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X",
+      "$ACT_Y"
+    ],
+    "preconditions": [
+      "object_type_exists($OT_A)",
+      "activity_exists_for_type($ACT_X,$OT_A)",
+      "activity_exists_for_type($ACT_Y,$OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        },
+        {
+          "tool": "compute_node_metrics",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "out_degree_comparison",
+        "aggregation_applied": "comparison",
+        "result_type": "boolean",
+        "lookup_path": "handler_derived: Category1Handler.compare_out_degree"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_017",
+    "category": "Category_1",
+    "formal_pattern": "compare(in_degree($ACT_X), in_degree($ACT_Y), object_type=$OT_A)",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "Does activity $ACT_X have a higher in-degree than activity $ACT_Y for object type $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X",
+      "$ACT_Y"
+    ],
+    "preconditions": [
+      "object_type_exists($OT_A)",
+      "activity_exists_for_type($ACT_X,$OT_A)",
+      "activity_exists_for_type($ACT_Y,$OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        },
+        {
+          "tool": "compute_node_metrics",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "in_degree_comparison",
+        "aggregation_applied": "comparison",
+        "result_type": "boolean",
+        "lookup_path": "handler_derived: Category1Handler.compare_in_degree"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_018",
+    "category": "Category_1",
+    "formal_pattern": "activity_cardinality(object_type=$OT_A)",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "How many distinct activities are observed for object type $OT_A?",
+    "runtime_variables": [
+      "$OT_A"
+    ],
+    "preconditions": [
+      "object_type_exists($OT_A)",
+      "has_activities_for_type($OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        },
+        {
+          "tool": "compute_node_metrics",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "activity_count_for_object_type",
+        "aggregation_applied": "count",
+        "result_type": "integer",
+        "lookup_path": "ocdfg.object_types[$OT_A].nodes.count"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_019",
+    "category": "Category_1",
+    "formal_pattern": "is_zero(in_degree(activity=$ACT_X, object_type=$OT_A))",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "Does activity $ACT_X have no incoming edges for object type $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X"
+    ],
+    "preconditions": [
+      "object_type_exists($OT_A)",
+      "activity_exists_for_type($ACT_X,$OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        },
+        {
+          "tool": "compute_node_metrics",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "activity_is_source",
+        "aggregation_applied": "none",
+        "result_type": "boolean",
+        "lookup_path": "handler_derived: Category1Handler.is_source_activity"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_020",
+    "category": "Category_1",
+    "formal_pattern": "is_zero(out_degree(activity=$ACT_X, object_type=$OT_A))",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "Does activity $ACT_X have no outgoing edges for object type $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X"
+    ],
+    "preconditions": [
+      "object_type_exists($OT_A)",
+      "activity_exists_for_type($ACT_X,$OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        },
+        {
+          "tool": "compute_node_metrics",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "activity_is_sink",
+        "aggregation_applied": "none",
+        "result_type": "boolean",
+        "lookup_path": "handler_derived: Category1Handler.is_sink_activity"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_021",
+    "category": "Category_1",
+    "formal_pattern": "top_k_activity(node_weight, object_type=$OT_A)",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "Which activities are the top-k by node weight for object type $OT_A?",
+    "runtime_variables": [
+      "$OT_A"
+    ],
+    "preconditions": [
+      "object_type_exists($OT_A)",
+      "has_activities_for_type($OT_A)",
+      "k_defined(default=3)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        },
+        {
+          "tool": "compute_node_metrics",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "top_k_node_weight_activities",
+        "aggregation_applied": "top_k",
+        "result_type": "list",
+        "lookup_path": "handler_derived: Category1Handler.top_k_node_weight"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_022",
+    "category": "Category_1",
+    "formal_pattern": "argmin_set(start_frequency, object_type=$OT_A)",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "Which activities have the lowest start frequency for object type $OT_A?",
+    "runtime_variables": [
+      "$OT_A"
+    ],
+    "preconditions": [
+      "object_type_exists($OT_A)",
+      "has_start_events_for_type($OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        },
+        {
+          "tool": "compute_node_metrics",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "min_start_frequency_activities",
+        "aggregation_applied": "argmin",
+        "result_type": "set",
+        "lookup_path": "handler_derived: Category1Handler.min_start_frequency_activities"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_023",
+    "category": "Category_1",
+    "formal_pattern": "object_support(activity=$ACT_X, object_type=$OT_A)",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "How many $OT_A objects interact with activity $ACT_X?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X"
+    ],
+    "preconditions": [
+      "object_type_exists($OT_A)",
+      "activity_exists_for_type($ACT_X,$OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        },
+        {
+          "tool": "compute_node_metrics",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "activity_object_support",
+        "aggregation_applied": "count",
+        "result_type": "integer",
+        "lookup_path": "ocdfg.nodes[$ACT_X].metrics[$OT_A].object_support_count"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_024",
+    "category": "Category_1",
+    "formal_pattern": "out_degree(activity=$ACT_X,$OT_A)-in_degree(activity=$ACT_X,$OT_A)",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "What is the out-degree minus in-degree balance of activity $ACT_X for object type $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X"
+    ],
+    "preconditions": [
+      "object_type_exists($OT_A)",
+      "activity_exists_for_type($ACT_X,$OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        },
+        {
+          "tool": "compute_node_metrics",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "node_degree_balance",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "handler_derived: Category1Handler.node_degree_balance"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_025",
+    "category": "Category_1",
+    "formal_pattern": "object_support(activity=$ACT_X,$OT_A)/object_frequency($OT_A)",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "What share of $OT_A objects interact with activity $ACT_X?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X"
+    ],
+    "preconditions": [
+      "object_type_exists($OT_A)",
+      "activity_exists_for_type($ACT_X,$OT_A)",
+      "object_frequency($OT_A)>0"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        },
+        {
+          "tool": "compute_node_metrics",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "activity_object_participation_ratio",
+        "aggregation_applied": "ratio",
+        "result_type": "float",
+        "lookup_path": "handler_derived: Category1Handler.object_participation_ratio"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_026",
+    "category": "Category_2",
+    "formal_pattern": "edge_exists(source=$ACT_X,target=$ACT_Y,object_type=$OT_A)",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "Does the edge $ACT_X -> $ACT_Y exist for $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X",
+      "$ACT_Y"
+    ],
+    "preconditions": [
+      "object_type_exists($OT_A)",
+      "activity_exists_for_type($ACT_X,$OT_A)",
+      "activity_exists_for_type($ACT_Y,$OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocdfg_edges",
+          "required": true
+        },
+        {
+          "tool": "compute_edge_temporal_metrics",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "edge_exists",
+        "aggregation_applied": "none",
+        "result_type": "boolean",
+        "lookup_path": "ocdfg.edges[$OT_A][$ACT_X,$ACT_Y].exists"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_027",
+    "category": "Category_2",
+    "formal_pattern": "edge_weight(source=$ACT_X,target=$ACT_Y,object_type=$OT_A)",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "How often does $ACT_X directly precede $ACT_Y for $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X",
+      "$ACT_Y"
+    ],
+    "preconditions": [
+      "object_type_exists($OT_A)",
+      "activity_exists_for_type($ACT_X,$OT_A)",
+      "activity_exists_for_type($ACT_Y,$OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocdfg_edges",
+          "required": true
+        },
+        {
+          "tool": "compute_edge_temporal_metrics",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "edge_weight",
+        "aggregation_applied": "count",
+        "result_type": "integer",
+        "lookup_path": "ocdfg.edges[$OT_A][$ACT_X,$ACT_Y].count"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_028",
+    "category": "Category_2",
+    "formal_pattern": "edge_weight(source=$ACT_Y,target=$ACT_X,object_type=$OT_A)",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "How often does $ACT_Y directly precede $ACT_X for $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X",
+      "$ACT_Y"
+    ],
+    "preconditions": [
+      "object_type_exists($OT_A)",
+      "activity_exists_for_type($ACT_X,$OT_A)",
+      "activity_exists_for_type($ACT_Y,$OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocdfg_edges",
+          "required": true
+        },
+        {
+          "tool": "compute_edge_temporal_metrics",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "reverse_edge_weight",
+        "aggregation_applied": "count",
+        "result_type": "integer",
+        "lookup_path": "ocdfg.edges[$OT_A][$ACT_Y,$ACT_X].count"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_029",
+    "category": "Category_2",
+    "formal_pattern": "outgoing_edge_cardinality(source=$ACT_X,object_type=$OT_A)",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "How many outgoing direct edges leave activity $ACT_X for $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X"
+    ],
+    "preconditions": [
+      "object_type_exists($OT_A)",
+      "activity_exists_for_type($ACT_X,$OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocdfg_edges",
+          "required": true
+        },
+        {
+          "tool": "compute_edge_temporal_metrics",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "outgoing_edge_count",
+        "aggregation_applied": "count",
+        "result_type": "integer",
+        "lookup_path": "ocdfg.edges[$OT_A].filter(source==$ACT_X).count"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_030",
+    "category": "Category_2",
+    "formal_pattern": "incoming_edge_cardinality(target=$ACT_Y,object_type=$OT_A)",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "How many incoming direct edges enter activity $ACT_Y for $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_Y"
+    ],
+    "preconditions": [
+      "object_type_exists($OT_A)",
+      "activity_exists_for_type($ACT_Y,$OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocdfg_edges",
+          "required": true
+        },
+        {
+          "tool": "compute_edge_temporal_metrics",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "incoming_edge_count",
+        "aggregation_applied": "count",
+        "result_type": "integer",
+        "lookup_path": "ocdfg.edges[$OT_A].filter(target==$ACT_Y).count"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_031",
+    "category": "Category_2",
+    "formal_pattern": "outgoing_edge_set(source=$ACT_X,object_type=$OT_A)",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "Which outgoing edges leave $ACT_X for $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X"
+    ],
+    "preconditions": [
+      "object_type_exists($OT_A)",
+      "activity_exists_for_type($ACT_X,$OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocdfg_edges",
+          "required": true
+        },
+        {
+          "tool": "compute_edge_temporal_metrics",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "outgoing_edges",
+        "aggregation_applied": "set_derived",
+        "result_type": "set",
+        "lookup_path": "ocdfg.edges[$OT_A].filter(source==$ACT_X).targets"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_032",
+    "category": "Category_2",
+    "formal_pattern": "incoming_edge_set(target=$ACT_Y,object_type=$OT_A)",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "Which incoming edges enter $ACT_Y for $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_Y"
+    ],
+    "preconditions": [
+      "object_type_exists($OT_A)",
+      "activity_exists_for_type($ACT_Y,$OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocdfg_edges",
+          "required": true
+        },
+        {
+          "tool": "compute_edge_temporal_metrics",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "incoming_edges",
+        "aggregation_applied": "set_derived",
+        "result_type": "set",
+        "lookup_path": "ocdfg.edges[$OT_A].filter(target==$ACT_Y).sources"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_033",
+    "category": "Category_2",
+    "formal_pattern": "avg(duration(edge=$ACT_X->$ACT_Y,object_type=$OT_A))",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "What is the average direct edge duration from $ACT_X to $ACT_Y for $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X",
+      "$ACT_Y"
+    ],
+    "preconditions": [
+      "edge_exists($ACT_X,$ACT_Y,$OT_A)",
+      "edge_has_durations($ACT_X,$ACT_Y,$OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocdfg_edges",
+          "required": true
+        },
+        {
+          "tool": "compute_edge_temporal_metrics",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "avg_edge_duration",
+        "aggregation_applied": "avg",
+        "result_type": "float",
+        "lookup_path": "ocdfg.edges[$OT_A][$ACT_X,$ACT_Y].durations.avg"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_034",
+    "category": "Category_2",
+    "formal_pattern": "min(duration(edge=$ACT_X->$ACT_Y,object_type=$OT_A))",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "What is the minimum direct edge duration from $ACT_X to $ACT_Y for $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X",
+      "$ACT_Y"
+    ],
+    "preconditions": [
+      "edge_exists($ACT_X,$ACT_Y,$OT_A)",
+      "edge_has_durations($ACT_X,$ACT_Y,$OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocdfg_edges",
+          "required": true
+        },
+        {
+          "tool": "compute_edge_temporal_metrics",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "min_edge_duration",
+        "aggregation_applied": "min",
+        "result_type": "float",
+        "lookup_path": "ocdfg.edges[$OT_A][$ACT_X,$ACT_Y].durations.min"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_035",
+    "category": "Category_2",
+    "formal_pattern": "max(duration(edge=$ACT_X->$ACT_Y,object_type=$OT_A))",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "What is the maximum direct edge duration from $ACT_X to $ACT_Y for $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X",
+      "$ACT_Y"
+    ],
+    "preconditions": [
+      "edge_exists($ACT_X,$ACT_Y,$OT_A)",
+      "edge_has_durations($ACT_X,$ACT_Y,$OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocdfg_edges",
+          "required": true
+        },
+        {
+          "tool": "compute_edge_temporal_metrics",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "max_edge_duration",
+        "aggregation_applied": "max",
+        "result_type": "float",
+        "lookup_path": "ocdfg.edges[$OT_A][$ACT_X,$ACT_Y].durations.max"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_036",
+    "category": "Category_2",
+    "formal_pattern": "sum(duration(edge=$ACT_X->$ACT_Y,object_type=$OT_A))",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "What is the sum of direct edge durations from $ACT_X to $ACT_Y for $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X",
+      "$ACT_Y"
+    ],
+    "preconditions": [
+      "edge_exists($ACT_X,$ACT_Y,$OT_A)",
+      "edge_has_durations($ACT_X,$ACT_Y,$OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocdfg_edges",
+          "required": true
+        },
+        {
+          "tool": "compute_edge_temporal_metrics",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "sum_edge_duration",
+        "aggregation_applied": "sum",
+        "result_type": "float",
+        "lookup_path": "ocdfg.edges[$OT_A][$ACT_X,$ACT_Y].durations.sum"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_037",
+    "category": "Category_2",
+    "formal_pattern": "avg(waiting_time(source=$ACT_X,target=$ACT_Y,object_type=$OT_A))",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "What is the average waiting time before activity $ACT_Y after $ACT_X for $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X",
+      "$ACT_Y"
+    ],
+    "preconditions": [
+      "edge_exists($ACT_X,$ACT_Y,$OT_A)",
+      "timestamps_available"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocdfg_edges",
+          "required": true
+        },
+        {
+          "tool": "compute_edge_temporal_metrics",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "avg_waiting_time",
+        "aggregation_applied": "avg",
+        "result_type": "float",
+        "lookup_path": "handler_derived: Category2Handler.avg_waiting_time"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_038",
+    "category": "Category_2",
+    "formal_pattern": "avg(lead_time(source=$ACT_X,target=$ACT_Y,object_type=$OT_A))",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "What is the average lead time from $ACT_X to $ACT_Y for $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X",
+      "$ACT_Y"
+    ],
+    "preconditions": [
+      "edge_exists($ACT_X,$ACT_Y,$OT_A)",
+      "timestamps_available"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocdfg_edges",
+          "required": true
+        },
+        {
+          "tool": "compute_edge_temporal_metrics",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "avg_lead_time",
+        "aggregation_applied": "avg",
+        "result_type": "float",
+        "lookup_path": "handler_derived: Category2Handler.avg_lead_time"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_039",
+    "category": "Category_2",
+    "formal_pattern": "compare(edge_weight($ACT_X,$ACT_Y),edge_weight($ACT_Y,$ACT_X),object_type=$OT_A)",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "Is edge $ACT_X -> $ACT_Y more frequent than edge $ACT_Y -> $ACT_X for $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X",
+      "$ACT_Y"
+    ],
+    "preconditions": [
+      "object_type_exists($OT_A)",
+      "activity_exists_for_type($ACT_X,$OT_A)",
+      "activity_exists_for_type($ACT_Y,$OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocdfg_edges",
+          "required": true
+        },
+        {
+          "tool": "compute_edge_temporal_metrics",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "edge_weight_direction_comparison",
+        "aggregation_applied": "comparison",
+        "result_type": "boolean",
+        "lookup_path": "handler_derived: Category2Handler.compare_edge_weight_directions"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_040",
+    "category": "Category_2",
+    "formal_pattern": "compare(avg_duration($ACT_X,$ACT_Y),avg_duration($ACT_Y,$ACT_X),object_type=$OT_A)",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "Is the average duration of $ACT_X -> $ACT_Y greater than $ACT_Y -> $ACT_X for $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X",
+      "$ACT_Y"
+    ],
+    "preconditions": [
+      "edge_has_durations($ACT_X,$ACT_Y,$OT_A)",
+      "edge_has_durations($ACT_Y,$ACT_X,$OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocdfg_edges",
+          "required": true
+        },
+        {
+          "tool": "compute_edge_temporal_metrics",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "edge_duration_direction_comparison",
+        "aggregation_applied": "avg",
+        "result_type": "boolean",
+        "lookup_path": "handler_derived: Category2Handler.compare_edge_duration_directions"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_041",
+    "category": "Category_2",
+    "formal_pattern": "top_k_edges(weight, source=$ACT_X, object_type=$OT_A)",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "Which are the top-k outgoing edges from $ACT_X by weight for $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X"
+    ],
+    "preconditions": [
+      "object_type_exists($OT_A)",
+      "activity_exists_for_type($ACT_X,$OT_A)",
+      "k_defined(default=3)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocdfg_edges",
+          "required": true
+        },
+        {
+          "tool": "compute_edge_temporal_metrics",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "top_k_outgoing_edges_by_weight",
+        "aggregation_applied": "top_k",
+        "result_type": "list",
+        "lookup_path": "handler_derived: Category2Handler.top_k_outgoing_edges_by_weight"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_042",
+    "category": "Category_2",
+    "formal_pattern": "top_k_edges(avg_duration, object_type=$OT_A)",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "Which are the top-k direct edges by average duration for $OT_A?",
+    "runtime_variables": [
+      "$OT_A"
+    ],
+    "preconditions": [
+      "object_type_exists($OT_A)",
+      "has_duration_edges($OT_A)",
+      "k_defined(default=3)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocdfg_edges",
+          "required": true
+        },
+        {
+          "tool": "compute_edge_temporal_metrics",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "top_k_edges_by_avg_duration",
+        "aggregation_applied": "top_k",
+        "result_type": "list",
+        "lookup_path": "handler_derived: Category2Handler.top_k_edges_by_avg_duration"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_043",
+    "category": "Category_2",
+    "formal_pattern": "argmax_successor(edge_weight, source=$ACT_X, object_type=$OT_A)",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "Which successor of $ACT_X has the highest edge weight for $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X"
+    ],
+    "preconditions": [
+      "object_type_exists($OT_A)",
+      "activity_has_outgoing_edges($ACT_X,$OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocdfg_edges",
+          "required": true
+        },
+        {
+          "tool": "compute_edge_temporal_metrics",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "argmax_successor_by_edge_weight",
+        "aggregation_applied": "argmax",
+        "result_type": "string",
+        "lookup_path": "handler_derived: Category2Handler.argmax_successor_by_weight"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_044",
+    "category": "Category_2",
+    "formal_pattern": "argmin_successor(avg_waiting_time, source=$ACT_X, object_type=$OT_A)",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "Which successor of $ACT_X has the lowest average waiting time for $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X"
+    ],
+    "preconditions": [
+      "object_type_exists($OT_A)",
+      "activity_has_outgoing_edges($ACT_X,$OT_A)",
+      "timestamps_available"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocdfg_edges",
+          "required": true
+        },
+        {
+          "tool": "compute_edge_temporal_metrics",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "argmin_successor_by_waiting_time",
+        "aggregation_applied": "argmin",
+        "result_type": "string",
+        "lookup_path": "handler_derived: Category2Handler.argmin_successor_waiting_time"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_045",
+    "category": "Category_2",
+    "formal_pattern": "has_duration(edge=$ACT_X->$ACT_Y,object_type=$OT_A)",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "Does edge $ACT_X -> $ACT_Y for $OT_A have recorded duration values?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X",
+      "$ACT_Y"
+    ],
+    "preconditions": [
+      "edge_exists($ACT_X,$ACT_Y,$OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocdfg_edges",
+          "required": true
+        },
+        {
+          "tool": "compute_edge_temporal_metrics",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "edge_has_duration",
+        "aggregation_applied": "none",
+        "result_type": "boolean",
+        "lookup_path": "ocdfg.edges[$OT_A][$ACT_X,$ACT_Y].durations.exists"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_046",
+    "category": "Category_2",
+    "formal_pattern": "edge_weight($ACT_X,$ACT_Y)/sum_outgoing_weight($ACT_X)",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "What share of outgoing edge weight from $ACT_X goes to $ACT_Y for $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X",
+      "$ACT_Y"
+    ],
+    "preconditions": [
+      "edge_exists($ACT_X,$ACT_Y,$OT_A)",
+      "sum_outgoing_weight($ACT_X,$OT_A)>0"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocdfg_edges",
+          "required": true
+        },
+        {
+          "tool": "compute_edge_temporal_metrics",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "edge_weight_share",
+        "aggregation_applied": "ratio",
+        "result_type": "float",
+        "lookup_path": "handler_derived: Category2Handler.edge_weight_share"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_047",
+    "category": "Category_2",
+    "formal_pattern": "sum_edges(weight, source=$ACT_X, object_type=$OT_A)",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "What is the total outgoing edge weight from $ACT_X for $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X"
+    ],
+    "preconditions": [
+      "object_type_exists($OT_A)",
+      "activity_exists_for_type($ACT_X,$OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocdfg_edges",
+          "required": true
+        },
+        {
+          "tool": "compute_edge_temporal_metrics",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "total_outgoing_edge_weight",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "handler_derived: Category2Handler.total_outgoing_edge_weight"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_048",
+    "category": "Category_2",
+    "formal_pattern": "sum_edges(weight, target=$ACT_Y, object_type=$OT_A)",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "What is the total incoming edge weight to $ACT_Y for $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_Y"
+    ],
+    "preconditions": [
+      "object_type_exists($OT_A)",
+      "activity_exists_for_type($ACT_Y,$OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocdfg_edges",
+          "required": true
+        },
+        {
+          "tool": "compute_edge_temporal_metrics",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "total_incoming_edge_weight",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "handler_derived: Category2Handler.total_incoming_edge_weight"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_049",
+    "category": "Category_2",
+    "formal_pattern": "edge_object_support(source=$ACT_X,target=$ACT_Y,object_type=$OT_A)",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "How many distinct $OT_A objects support edge $ACT_X -> $ACT_Y?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X",
+      "$ACT_Y"
+    ],
+    "preconditions": [
+      "edge_exists($ACT_X,$ACT_Y,$OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocdfg_edges",
+          "required": true
+        },
+        {
+          "tool": "compute_edge_temporal_metrics",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "edge_object_support",
+        "aggregation_applied": "count",
+        "result_type": "integer",
+        "lookup_path": "handler_derived: Category2Handler.edge_object_support"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_050",
+    "category": "Category_2",
+    "formal_pattern": "max(duration(edge))-min(duration(edge))",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "What is the duration spread of edge $ACT_X -> $ACT_Y for $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X",
+      "$ACT_Y"
+    ],
+    "preconditions": [
+      "edge_has_durations($ACT_X,$ACT_Y,$OT_A)",
+      "duration_count($ACT_X,$ACT_Y,$OT_A)>=2"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocdfg_edges",
+          "required": true
+        },
+        {
+          "tool": "compute_edge_temporal_metrics",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "edge_duration_spread",
+        "aggregation_applied": "min",
+        "result_type": "float",
+        "lookup_path": "handler_derived: Category2Handler.edge_duration_spread"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_051",
+    "category": "Category_3",
+    "formal_pattern": "direct_reachable(source=$ACT_Y,target=$ACT_X,object_type=$OT_A)",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "Is $ACT_X directly reachable from $ACT_Y for $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X",
+      "$ACT_Y"
+    ],
+    "preconditions": [
+      "object_type_exists($OT_A)",
+      "activity_exists_for_type($ACT_X,$OT_A)",
+      "activity_exists_for_type($ACT_Y,$OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocdfg_edges",
+          "required": true
+        },
+        {
+          "tool": "compute_reachability_paths",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "direct_reachability",
+        "aggregation_applied": "none",
+        "result_type": "boolean",
+        "lookup_path": "ocdfg.edges[$OT_A][$ACT_Y,$ACT_X].exists"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_052",
+    "category": "Category_3",
+    "formal_pattern": "reachable(source=$ACT_X,target=$ACT_Y,object_type=$OT_A)",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "Can $ACT_X eventually reach $ACT_Y for $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X",
+      "$ACT_Y"
+    ],
+    "preconditions": [
+      "object_type_exists($OT_A)",
+      "activity_exists_for_type($ACT_X,$OT_A)",
+      "activity_exists_for_type($ACT_Y,$OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocdfg_edges",
+          "required": true
+        },
+        {
+          "tool": "compute_reachability_paths",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "eventual_reachability",
+        "aggregation_applied": "none",
+        "result_type": "boolean",
+        "lookup_path": "handler_derived: Category3Handler.reachable"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_053",
+    "category": "Category_3",
+    "formal_pattern": "reachable($ACT_X,$ACT_Y,$OT_A) and not direct_reachable($ACT_X,$ACT_Y,$OT_A)",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "Can $ACT_X reach $ACT_Y only through an indirect path for $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X",
+      "$ACT_Y"
+    ],
+    "preconditions": [
+      "object_type_exists($OT_A)",
+      "activity_exists_for_type($ACT_X,$OT_A)",
+      "activity_exists_for_type($ACT_Y,$OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocdfg_edges",
+          "required": true
+        },
+        {
+          "tool": "compute_reachability_paths",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "indirect_reachability",
+        "aggregation_applied": "none",
+        "result_type": "boolean",
+        "lookup_path": "handler_derived: Category3Handler.indirect_reachable"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_054",
+    "category": "Category_3",
+    "formal_pattern": "shortest_path(source=$ACT_X,target=$ACT_Y,object_type=$OT_A)",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "What is the shortest path from $ACT_X to $ACT_Y for $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X",
+      "$ACT_Y"
+    ],
+    "preconditions": [
+      "reachable($ACT_X,$ACT_Y,$OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocdfg_edges",
+          "required": true
+        },
+        {
+          "tool": "compute_reachability_paths",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "shortest_path",
+        "aggregation_applied": "set_derived",
+        "result_type": "path",
+        "lookup_path": "handler_derived: Category3Handler.shortest_path"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_055",
+    "category": "Category_3",
+    "formal_pattern": "path_length(shortest_path($ACT_X,$ACT_Y,$OT_A))",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "How many edges are in the shortest path from $ACT_X to $ACT_Y for $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X",
+      "$ACT_Y"
+    ],
+    "preconditions": [
+      "reachable($ACT_X,$ACT_Y,$OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocdfg_edges",
+          "required": true
+        },
+        {
+          "tool": "compute_reachability_paths",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "shortest_path_length",
+        "aggregation_applied": "count",
+        "result_type": "integer",
+        "lookup_path": "handler_derived: Category3Handler.shortest_path_length"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_056",
+    "category": "Category_3",
+    "formal_pattern": "transitive_successors(activity=$ACT_X,object_type=$OT_A)",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "Which activities are downstream of $ACT_X for $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X"
+    ],
+    "preconditions": [
+      "object_type_exists($OT_A)",
+      "activity_exists_for_type($ACT_X,$OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocdfg_edges",
+          "required": true
+        },
+        {
+          "tool": "compute_reachability_paths",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "downstream_activity_set",
+        "aggregation_applied": "set_derived",
+        "result_type": "set",
+        "lookup_path": "handler_derived: Category3Handler.downstream_activities"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_057",
+    "category": "Category_3",
+    "formal_pattern": "transitive_predecessors(activity=$ACT_Y,object_type=$OT_A)",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "Which activities are upstream of $ACT_Y for $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_Y"
+    ],
+    "preconditions": [
+      "object_type_exists($OT_A)",
+      "activity_exists_for_type($ACT_Y,$OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocdfg_edges",
+          "required": true
+        },
+        {
+          "tool": "compute_reachability_paths",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "upstream_activity_set",
+        "aggregation_applied": "set_derived",
+        "result_type": "set",
+        "lookup_path": "handler_derived: Category3Handler.upstream_activities"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_058",
+    "category": "Category_3",
+    "formal_pattern": "sources(object_type=$OT_A) intersect upstream($ACT_Y)",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "Which source activities can reach $ACT_Y for $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_Y"
+    ],
+    "preconditions": [
+      "object_type_exists($OT_A)",
+      "activity_exists_for_type($ACT_Y,$OT_A)",
+      "has_source_activities($OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocdfg_edges",
+          "required": true
+        },
+        {
+          "tool": "compute_reachability_paths",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "source_activities_reaching_target",
+        "aggregation_applied": "set_derived",
+        "result_type": "set",
+        "lookup_path": "handler_derived: Category3Handler.sources_reaching_target"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_059",
+    "category": "Category_3",
+    "formal_pattern": "sinks(object_type=$OT_A) intersect downstream($ACT_X)",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "Which sink activities are reachable from $ACT_X for $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X"
+    ],
+    "preconditions": [
+      "object_type_exists($OT_A)",
+      "activity_exists_for_type($ACT_X,$OT_A)",
+      "has_sink_activities($OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocdfg_edges",
+          "required": true
+        },
+        {
+          "tool": "compute_reachability_paths",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "sink_activities_reachable_from_source",
+        "aggregation_applied": "set_derived",
+        "result_type": "set",
+        "lookup_path": "handler_derived: Category3Handler.reachable_sinks"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_060",
+    "category": "Category_3",
+    "formal_pattern": "exists path $ACT_X ->+ $ACT_X for object_type=$OT_A",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "Is activity $ACT_X part of a loop for object type $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X"
+    ],
+    "preconditions": [
+      "object_type_exists($OT_A)",
+      "activity_exists_for_type($ACT_X,$OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocdfg_edges",
+          "required": true
+        },
+        {
+          "tool": "compute_reachability_paths",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "activity_loop_membership",
+        "aggregation_applied": "none",
+        "result_type": "boolean",
+        "lookup_path": "handler_derived: Category3Handler.activity_in_loop"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_061",
+    "category": "Category_3",
+    "formal_pattern": "cycle_nodes(object_type=$OT_A)",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "Which activities are part of at least one loop for object type $OT_A?",
+    "runtime_variables": [
+      "$OT_A"
+    ],
+    "preconditions": [
+      "object_type_exists($OT_A)",
+      "has_edges($OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocdfg_edges",
+          "required": true
+        },
+        {
+          "tool": "compute_reachability_paths",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "loop_activity_set",
+        "aggregation_applied": "set_derived",
+        "result_type": "set",
+        "lookup_path": "handler_derived: Category3Handler.loop_activity_set"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_062",
+    "category": "Category_3",
+    "formal_pattern": "cardinality(downstream($ACT_X,$OT_A))",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "How many activities are reachable from $ACT_X for $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X"
+    ],
+    "preconditions": [
+      "object_type_exists($OT_A)",
+      "activity_exists_for_type($ACT_X,$OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocdfg_edges",
+          "required": true
+        },
+        {
+          "tool": "compute_reachability_paths",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "downstream_activity_count",
+        "aggregation_applied": "count",
+        "result_type": "integer",
+        "lookup_path": "handler_derived: Category3Handler.downstream_count"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_063",
+    "category": "Category_3",
+    "formal_pattern": "cardinality(upstream($ACT_Y,$OT_A))",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "How many activities can reach $ACT_Y for $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_Y"
+    ],
+    "preconditions": [
+      "object_type_exists($OT_A)",
+      "activity_exists_for_type($ACT_Y,$OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocdfg_edges",
+          "required": true
+        },
+        {
+          "tool": "compute_reachability_paths",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "upstream_activity_count",
+        "aggregation_applied": "count",
+        "result_type": "integer",
+        "lookup_path": "handler_derived: Category3Handler.upstream_count"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_064",
+    "category": "Category_3",
+    "formal_pattern": "sinks($OT_A) subset downstream($ACT_X,$OT_A)",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "Is every sink activity reachable from $ACT_X for $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X"
+    ],
+    "preconditions": [
+      "object_type_exists($OT_A)",
+      "activity_exists_for_type($ACT_X,$OT_A)",
+      "has_sink_activities($OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocdfg_edges",
+          "required": true
+        },
+        {
+          "tool": "compute_reachability_paths",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "all_sinks_reachable",
+        "aggregation_applied": "none",
+        "result_type": "boolean",
+        "lookup_path": "handler_derived: Category3Handler.all_sinks_reachable"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_065",
+    "category": "Category_3",
+    "formal_pattern": "sources($OT_A) subset upstream($ACT_Y,$OT_A)",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "Can every source activity reach $ACT_Y for $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_Y"
+    ],
+    "preconditions": [
+      "object_type_exists($OT_A)",
+      "activity_exists_for_type($ACT_Y,$OT_A)",
+      "has_source_activities($OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocdfg_edges",
+          "required": true
+        },
+        {
+          "tool": "compute_reachability_paths",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "all_sources_reach_target",
+        "aggregation_applied": "none",
+        "result_type": "boolean",
+        "lookup_path": "handler_derived: Category3Handler.all_sources_reach_target"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_066",
+    "category": "Category_3",
+    "formal_pattern": "cardinality({(a,b): reachable(a,b,$OT_A)})",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "What is the transitive closure size for object type $OT_A?",
+    "runtime_variables": [
+      "$OT_A"
+    ],
+    "preconditions": [
+      "object_type_exists($OT_A)",
+      "has_edges($OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocdfg_edges",
+          "required": true
+        },
+        {
+          "tool": "compute_reachability_paths",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "transitive_closure_size",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "handler_derived: Category3Handler.transitive_closure_size"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_067",
+    "category": "Category_3",
+    "formal_pattern": "edges(shortest_path($ACT_X,$ACT_Y,$OT_A))",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "Which direct edges lie on the shortest path from $ACT_X to $ACT_Y for $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X",
+      "$ACT_Y"
+    ],
+    "preconditions": [
+      "reachable($ACT_X,$ACT_Y,$OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocdfg_edges",
+          "required": true
+        },
+        {
+          "tool": "compute_reachability_paths",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "shortest_path_edge_list",
+        "aggregation_applied": "set_derived",
+        "result_type": "list",
+        "lookup_path": "handler_derived: Category3Handler.shortest_path_edges"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_068",
+    "category": "Category_3",
+    "formal_pattern": "first_successor(shortest_path($ACT_X,$ACT_Y,$OT_A))",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "What is the first hop on the shortest path from $ACT_X to $ACT_Y for $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X",
+      "$ACT_Y"
+    ],
+    "preconditions": [
+      "reachable($ACT_X,$ACT_Y,$OT_A)",
+      "shortest_path_length($ACT_X,$ACT_Y,$OT_A)>=1"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocdfg_edges",
+          "required": true
+        },
+        {
+          "tool": "compute_reachability_paths",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "shortest_path_first_hop",
+        "aggregation_applied": "none",
+        "result_type": "string",
+        "lookup_path": "handler_derived: Category3Handler.shortest_path_first_hop"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_069",
+    "category": "Category_3",
+    "formal_pattern": "predecessor_of_target(shortest_path($ACT_X,$ACT_Y,$OT_A))",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "What is the last hop before $ACT_Y on the shortest path from $ACT_X for $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X",
+      "$ACT_Y"
+    ],
+    "preconditions": [
+      "reachable($ACT_X,$ACT_Y,$OT_A)",
+      "shortest_path_length($ACT_X,$ACT_Y,$OT_A)>=1"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocdfg_edges",
+          "required": true
+        },
+        {
+          "tool": "compute_reachability_paths",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "shortest_path_last_hop",
+        "aggregation_applied": "none",
+        "result_type": "string",
+        "lookup_path": "handler_derived: Category3Handler.shortest_path_last_hop"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_070",
+    "category": "Category_3",
+    "formal_pattern": "reachable($ACT_X,$ACT_Y,$OT_A) == reachable($ACT_Y,$ACT_X,$OT_A)",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "Is reachability symmetric between $ACT_X and $ACT_Y for $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X",
+      "$ACT_Y"
+    ],
+    "preconditions": [
+      "object_type_exists($OT_A)",
+      "activity_exists_for_type($ACT_X,$OT_A)",
+      "activity_exists_for_type($ACT_Y,$OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocdfg_edges",
+          "required": true
+        },
+        {
+          "tool": "compute_reachability_paths",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "reachability_symmetry",
+        "aggregation_applied": "none",
+        "result_type": "boolean",
+        "lookup_path": "handler_derived: Category3Handler.reachability_symmetry"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_071",
+    "category": "Category_3",
+    "formal_pattern": "direct_reachable($ACT_X,$ACT_Y,$OT_A) and not reachable($ACT_Y,$ACT_X,$OT_A)",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "Is $ACT_Y immediately downstream of $ACT_X but not upstream for $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X",
+      "$ACT_Y"
+    ],
+    "preconditions": [
+      "object_type_exists($OT_A)",
+      "activity_exists_for_type($ACT_X,$OT_A)",
+      "activity_exists_for_type($ACT_Y,$OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocdfg_edges",
+          "required": true
+        },
+        {
+          "tool": "compute_reachability_paths",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "one_way_direct_reachability",
+        "aggregation_applied": "none",
+        "result_type": "boolean",
+        "lookup_path": "handler_derived: Category3Handler.one_way_direct_reachability"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_072",
+    "category": "Category_3",
+    "formal_pattern": "upstream($ACT_X,$OT_A) union {$ACT_X} union downstream($ACT_X,$OT_A)",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "Which activities form the local reachability subgraph around $ACT_X for $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X"
+    ],
+    "preconditions": [
+      "object_type_exists($OT_A)",
+      "activity_exists_for_type($ACT_X,$OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocdfg_edges",
+          "required": true
+        },
+        {
+          "tool": "compute_reachability_paths",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "local_reachability_subgraph_nodes",
+        "aggregation_applied": "set_derived",
+        "result_type": "set",
+        "lookup_path": "handler_derived: Category3Handler.local_reachability_subgraph"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_073",
+    "category": "Category_3",
+    "formal_pattern": "min_{s in sources($OT_A)} path_length(s,$ACT_Y,$OT_A)",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "What is the minimum path length from any source activity to $ACT_Y for $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_Y"
+    ],
+    "preconditions": [
+      "object_type_exists($OT_A)",
+      "activity_exists_for_type($ACT_Y,$OT_A)",
+      "has_source_activities($OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocdfg_edges",
+          "required": true
+        },
+        {
+          "tool": "compute_reachability_paths",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "min_source_to_target_path_length",
+        "aggregation_applied": "min",
+        "result_type": "integer",
+        "lookup_path": "handler_derived: Category3Handler.min_source_to_target_path_length"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_074",
+    "category": "Category_3",
+    "formal_pattern": "min_{t in sinks($OT_A)} path_length($ACT_X,t,$OT_A)",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "What is the minimum path length from $ACT_X to any sink activity for $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X"
+    ],
+    "preconditions": [
+      "object_type_exists($OT_A)",
+      "activity_exists_for_type($ACT_X,$OT_A)",
+      "has_sink_activities($OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocdfg_edges",
+          "required": true
+        },
+        {
+          "tool": "compute_reachability_paths",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "min_source_to_sink_path_length",
+        "aggregation_applied": "min",
+        "result_type": "integer",
+        "lookup_path": "handler_derived: Category3Handler.min_to_sink_path_length"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_075",
+    "category": "Category_3",
+    "formal_pattern": "argmin_{t in sinks($OT_A)} path_length($ACT_X,t,$OT_A)",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "Which activity is the closest reachable sink from $ACT_X for $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X"
+    ],
+    "preconditions": [
+      "object_type_exists($OT_A)",
+      "activity_exists_for_type($ACT_X,$OT_A)",
+      "has_reachable_sink($ACT_X,$OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocdfg_edges",
+          "required": true
+        },
+        {
+          "tool": "compute_reachability_paths",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "nearest_reachable_sink",
+        "aggregation_applied": "argmin",
+        "result_type": "string",
+        "lookup_path": "handler_derived: Category3Handler.nearest_reachable_sink"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_076",
+    "category": "Category_4",
+    "formal_pattern": "cooccurrence_count(activity=$ACT_X, object_types={$OT_A,$OT_B})",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "How many events of activity $ACT_X involve both object types $OT_A and $OT_B?",
+    "runtime_variables": [
+      "$OT_A",
+      "$OT_B",
+      "$ACT_X"
+    ],
+    "preconditions": [
+      "object_type_exists($OT_A)",
+      "object_type_exists($OT_B)",
+      "$OT_A != $OT_B",
+      "activity_exists($ACT_X)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        },
+        {
+          "tool": "compute_multi_object_interactions",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "activity_object_type_cooccurrence_count",
+        "aggregation_applied": "count",
+        "result_type": "integer",
+        "lookup_path": "handler_derived: Category4Handler.activity_pair_cooccurrence_count"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_077",
+    "category": "Category_4",
+    "formal_pattern": "exists_event(activity=$ACT_X, object_types include {$OT_A,$OT_B})",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "Does activity $ACT_X involve both object types $OT_A and $OT_B?",
+    "runtime_variables": [
+      "$OT_A",
+      "$OT_B",
+      "$ACT_X"
+    ],
+    "preconditions": [
+      "object_type_exists($OT_A)",
+      "object_type_exists($OT_B)",
+      "$OT_A != $OT_B",
+      "activity_exists($ACT_X)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        },
+        {
+          "tool": "compute_multi_object_interactions",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "activity_shared_by_object_types",
+        "aggregation_applied": "none",
+        "result_type": "boolean",
+        "lookup_path": "handler_derived: Category4Handler.activity_shared_by_pair"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_078",
+    "category": "Category_4",
+    "formal_pattern": "shared_activities(object_types={$OT_A,$OT_B})",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "Which activities involve both object types $OT_A and $OT_B?",
+    "runtime_variables": [
+      "$OT_A",
+      "$OT_B"
+    ],
+    "preconditions": [
+      "object_type_exists($OT_A)",
+      "object_type_exists($OT_B)",
+      "$OT_A != $OT_B"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        },
+        {
+          "tool": "compute_multi_object_interactions",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "shared_activity_set",
+        "aggregation_applied": "set_derived",
+        "result_type": "set",
+        "lookup_path": "handler_derived: Category4Handler.shared_activities"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_079",
+    "category": "Category_4",
+    "formal_pattern": "cardinality(shared_activities($OT_A,$OT_B))",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "How many activities involve both object types $OT_A and $OT_B?",
+    "runtime_variables": [
+      "$OT_A",
+      "$OT_B"
+    ],
+    "preconditions": [
+      "object_type_exists($OT_A)",
+      "object_type_exists($OT_B)",
+      "$OT_A != $OT_B"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        },
+        {
+          "tool": "compute_multi_object_interactions",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "shared_activity_count",
+        "aggregation_applied": "count",
+        "result_type": "integer",
+        "lookup_path": "handler_derived: Category4Handler.shared_activity_count"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_080",
+    "category": "Category_4",
+    "formal_pattern": "distinct_objects(object_type=$OT_A, activity=$ACT_X) per event aggregated max",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "What is the convergence degree of $OT_A at activity $ACT_X?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X"
+    ],
+    "preconditions": [
+      "object_type_exists($OT_A)",
+      "activity_exists($ACT_X)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        },
+        {
+          "tool": "compute_multi_object_interactions",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "convergence_degree",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "handler_derived: Category4Handler.convergence_degree"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_081",
+    "category": "Category_4",
+    "formal_pattern": "outgoing_object_branching(object_type=$OT_A, activity=$ACT_X)",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "What is the divergence degree of $OT_A at activity $ACT_X?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X"
+    ],
+    "preconditions": [
+      "object_type_exists($OT_A)",
+      "activity_exists_for_type($ACT_X,$OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        },
+        {
+          "tool": "compute_multi_object_interactions",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "divergence_degree",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "handler_derived: Category4Handler.divergence_degree"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_082",
+    "category": "Category_4",
+    "formal_pattern": "cooccurrence_count($ACT_X,$OT_A,$OT_B)>0 and shared_activity($ACT_X,$OT_A,$OT_B)",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "Is activity $ACT_X a synchronization candidate for object types $OT_A and $OT_B?",
+    "runtime_variables": [
+      "$OT_A",
+      "$OT_B",
+      "$ACT_X"
+    ],
+    "preconditions": [
+      "object_type_exists($OT_A)",
+      "object_type_exists($OT_B)",
+      "$OT_A != $OT_B",
+      "activity_exists($ACT_X)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        },
+        {
+          "tool": "compute_multi_object_interactions",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "synchronization_candidate",
+        "aggregation_applied": "none",
+        "result_type": "boolean",
+        "lookup_path": "handler_derived: Category4Handler.synchronization_candidate"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_083",
+    "category": "Category_4",
+    "formal_pattern": "count_events(object_types include {$OT_A,$OT_B})",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "What is the interaction strength between object types $OT_A and $OT_B?",
+    "runtime_variables": [
+      "$OT_A",
+      "$OT_B"
+    ],
+    "preconditions": [
+      "object_type_exists($OT_A)",
+      "object_type_exists($OT_B)",
+      "$OT_A != $OT_B"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        },
+        {
+          "tool": "compute_multi_object_interactions",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "object_type_pair_interaction_strength",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "handler_derived: Category4Handler.pair_interaction_strength"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_084",
+    "category": "Category_4",
+    "formal_pattern": "compare(cooccurrence($ACT_X,$OT_A,$OT_B),cooccurrence($ACT_Y,$OT_A,$OT_B))",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "Is the interaction strength of $OT_A and $OT_B higher at $ACT_X than at $ACT_Y?",
+    "runtime_variables": [
+      "$OT_A",
+      "$OT_B",
+      "$ACT_X",
+      "$ACT_Y"
+    ],
+    "preconditions": [
+      "object_type_exists($OT_A)",
+      "object_type_exists($OT_B)",
+      "$OT_A != $OT_B",
+      "activity_exists($ACT_X)",
+      "activity_exists($ACT_Y)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        },
+        {
+          "tool": "compute_multi_object_interactions",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "pair_interaction_activity_comparison",
+        "aggregation_applied": "comparison",
+        "result_type": "boolean",
+        "lookup_path": "handler_derived: Category4Handler.compare_pair_interaction_by_activity"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_085",
+    "category": "Category_4",
+    "formal_pattern": "object_type_pairs(activity=$ACT_X)",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "Which object-type pairs co-occur at activity $ACT_X?",
+    "runtime_variables": [
+      "$ACT_X"
+    ],
+    "preconditions": [
+      "activity_exists($ACT_X)",
+      "has_multi_object_events($ACT_X)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        },
+        {
+          "tool": "compute_multi_object_interactions",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "object_type_pairs_at_activity",
+        "aggregation_applied": "set_derived",
+        "result_type": "set",
+        "lookup_path": "handler_derived: Category4Handler.object_type_pairs_at_activity"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_086",
+    "category": "Category_4",
+    "formal_pattern": "activities where cooccurrence(activity,$OT_A,$OT_B)>0",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "Which activities synchronize object types $OT_A and $OT_B?",
+    "runtime_variables": [
+      "$OT_A",
+      "$OT_B"
+    ],
+    "preconditions": [
+      "object_type_exists($OT_A)",
+      "object_type_exists($OT_B)",
+      "$OT_A != $OT_B"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        },
+        {
+          "tool": "compute_multi_object_interactions",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "synchronizing_activity_set",
+        "aggregation_applied": "set_derived",
+        "result_type": "set",
+        "lookup_path": "handler_derived: Category4Handler.synchronizing_activities"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_087",
+    "category": "Category_4",
+    "formal_pattern": "distinct_objects($OT_A in events(activity=$ACT_X, contains $OT_B))",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "How many $OT_A objects co-occur with $OT_B objects at activity $ACT_X?",
+    "runtime_variables": [
+      "$OT_A",
+      "$OT_B",
+      "$ACT_X"
+    ],
+    "preconditions": [
+      "object_type_exists($OT_A)",
+      "object_type_exists($OT_B)",
+      "$OT_A != $OT_B",
+      "activity_exists($ACT_X)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        },
+        {
+          "tool": "compute_multi_object_interactions",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "cooccurring_object_count_for_type",
+        "aggregation_applied": "count",
+        "result_type": "integer",
+        "lookup_path": "handler_derived: Category4Handler.cooccurring_objects_for_type"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_088",
+    "category": "Category_4",
+    "formal_pattern": "avg(objects_of_types({$OT_A,$OT_B}) per event at $ACT_X)",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "What is the average number of co-occurring objects per event at $ACT_X for $OT_A and $OT_B?",
+    "runtime_variables": [
+      "$OT_A",
+      "$OT_B",
+      "$ACT_X"
+    ],
+    "preconditions": [
+      "object_type_exists($OT_A)",
+      "object_type_exists($OT_B)",
+      "$OT_A != $OT_B",
+      "activity_exists($ACT_X)",
+      "has_pair_events($ACT_X,$OT_A,$OT_B)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        },
+        {
+          "tool": "compute_multi_object_interactions",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "avg_cooccurring_objects_per_event",
+        "aggregation_applied": "avg",
+        "result_type": "float",
+        "lookup_path": "handler_derived: Category4Handler.avg_cooccurring_objects_per_event"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_089",
+    "category": "Category_4",
+    "formal_pattern": "max(objects_of_types({$OT_A,$OT_B}) per event at $ACT_X)",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "What is the maximum number of co-occurring $OT_A and $OT_B objects in one event at $ACT_X?",
+    "runtime_variables": [
+      "$OT_A",
+      "$OT_B",
+      "$ACT_X"
+    ],
+    "preconditions": [
+      "object_type_exists($OT_A)",
+      "object_type_exists($OT_B)",
+      "$OT_A != $OT_B",
+      "activity_exists($ACT_X)",
+      "has_pair_events($ACT_X,$OT_A,$OT_B)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        },
+        {
+          "tool": "compute_multi_object_interactions",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "max_cooccurring_objects_per_event",
+        "aggregation_applied": "max",
+        "result_type": "integer",
+        "lookup_path": "handler_derived: Category4Handler.max_cooccurring_objects_per_event"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_090",
+    "category": "Category_4",
+    "formal_pattern": "min(objects_of_types({$OT_A,$OT_B}) per event at $ACT_X)",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "What is the minimum number of co-occurring $OT_A and $OT_B objects in one event at $ACT_X?",
+    "runtime_variables": [
+      "$OT_A",
+      "$OT_B",
+      "$ACT_X"
+    ],
+    "preconditions": [
+      "object_type_exists($OT_A)",
+      "object_type_exists($OT_B)",
+      "$OT_A != $OT_B",
+      "activity_exists($ACT_X)",
+      "has_pair_events($ACT_X,$OT_A,$OT_B)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        },
+        {
+          "tool": "compute_multi_object_interactions",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "min_cooccurring_objects_per_event",
+        "aggregation_applied": "min",
+        "result_type": "integer",
+        "lookup_path": "handler_derived: Category4Handler.min_cooccurring_objects_per_event"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_091",
+    "category": "Category_4",
+    "formal_pattern": "count_events(include $OT_A and $OT_B) / count_events(include $OT_A)",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "What share of $OT_A events also involve $OT_B?",
+    "runtime_variables": [
+      "$OT_A",
+      "$OT_B"
+    ],
+    "preconditions": [
+      "object_type_exists($OT_A)",
+      "object_type_exists($OT_B)",
+      "$OT_A != $OT_B",
+      "event_count_for_type($OT_A)>0"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        },
+        {
+          "tool": "compute_multi_object_interactions",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "object_type_pair_interaction_ratio",
+        "aggregation_applied": "ratio",
+        "result_type": "float",
+        "lookup_path": "handler_derived: Category4Handler.pair_interaction_ratio"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_092",
+    "category": "Category_4",
+    "formal_pattern": "argmax_activity(convergence_degree, object_type=$OT_A)",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "Which activity has the highest convergence degree for object type $OT_A?",
+    "runtime_variables": [
+      "$OT_A"
+    ],
+    "preconditions": [
+      "object_type_exists($OT_A)",
+      "has_activities_for_type($OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        },
+        {
+          "tool": "compute_multi_object_interactions",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "argmax_convergence_activity",
+        "aggregation_applied": "argmax",
+        "result_type": "string",
+        "lookup_path": "handler_derived: Category4Handler.argmax_convergence_activity"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_093",
+    "category": "Category_4",
+    "formal_pattern": "argmax_activity(divergence_degree, object_type=$OT_A)",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "Which activity has the highest divergence degree for object type $OT_A?",
+    "runtime_variables": [
+      "$OT_A"
+    ],
+    "preconditions": [
+      "object_type_exists($OT_A)",
+      "has_activities_for_type($OT_A)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        },
+        {
+          "tool": "compute_multi_object_interactions",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "argmax_divergence_activity",
+        "aggregation_applied": "argmax",
+        "result_type": "string",
+        "lookup_path": "handler_derived: Category4Handler.argmax_divergence_activity"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_094",
+    "category": "Category_4",
+    "formal_pattern": "start_activities($OT_A) intersect start_activities($OT_B)",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "Which start activities are shared by object types $OT_A and $OT_B?",
+    "runtime_variables": [
+      "$OT_A",
+      "$OT_B"
+    ],
+    "preconditions": [
+      "object_type_exists($OT_A)",
+      "object_type_exists($OT_B)",
+      "$OT_A != $OT_B"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        },
+        {
+          "tool": "compute_multi_object_interactions",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "shared_start_activity_set",
+        "aggregation_applied": "ratio",
+        "result_type": "set",
+        "lookup_path": "handler_derived: Category4Handler.shared_start_activities"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_095",
+    "category": "Category_4",
+    "formal_pattern": "end_activities($OT_A) intersect end_activities($OT_B)",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "Which end activities are shared by object types $OT_A and $OT_B?",
+    "runtime_variables": [
+      "$OT_A",
+      "$OT_B"
+    ],
+    "preconditions": [
+      "object_type_exists($OT_A)",
+      "object_type_exists($OT_B)",
+      "$OT_A != $OT_B"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        },
+        {
+          "tool": "compute_multi_object_interactions",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "shared_end_activity_set",
+        "aggregation_applied": "ratio",
+        "result_type": "set",
+        "lookup_path": "handler_derived: Category4Handler.shared_end_activities"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_096",
+    "category": "Category_4",
+    "formal_pattern": "cardinality(edges($OT_A) intersect edges($OT_B))",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "How many direct edges are shared by object types $OT_A and $OT_B?",
+    "runtime_variables": [
+      "$OT_A",
+      "$OT_B"
+    ],
+    "preconditions": [
+      "object_type_exists($OT_A)",
+      "object_type_exists($OT_B)",
+      "$OT_A != $OT_B",
+      "has_edges($OT_A)",
+      "has_edges($OT_B)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        },
+        {
+          "tool": "compute_multi_object_interactions",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "shared_edge_count",
+        "aggregation_applied": "ratio",
+        "result_type": "integer",
+        "lookup_path": "handler_derived: Category4Handler.shared_edge_count"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_097",
+    "category": "Category_4",
+    "formal_pattern": "edges($OT_A) intersect edges($OT_B)",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "Which direct edges are shared by object types $OT_A and $OT_B?",
+    "runtime_variables": [
+      "$OT_A",
+      "$OT_B"
+    ],
+    "preconditions": [
+      "object_type_exists($OT_A)",
+      "object_type_exists($OT_B)",
+      "$OT_A != $OT_B",
+      "has_edges($OT_A)",
+      "has_edges($OT_B)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        },
+        {
+          "tool": "compute_multi_object_interactions",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "shared_edge_set",
+        "aggregation_applied": "ratio",
+        "result_type": "set",
+        "lookup_path": "handler_derived: Category4Handler.shared_edge_set"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_098",
+    "category": "Category_4",
+    "formal_pattern": "cooccurrence($ACT_X,$OT_A,$OT_B)>cooccurrence($ACT_Y,$OT_A,$OT_B)",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "Does activity $ACT_X have stronger pair interaction than activity $ACT_Y for object types $OT_A and $OT_B?",
+    "runtime_variables": [
+      "$OT_A",
+      "$OT_B",
+      "$ACT_X",
+      "$ACT_Y"
+    ],
+    "preconditions": [
+      "object_type_exists($OT_A)",
+      "object_type_exists($OT_B)",
+      "$OT_A != $OT_B",
+      "activity_exists($ACT_X)",
+      "activity_exists($ACT_Y)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        },
+        {
+          "tool": "compute_multi_object_interactions",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "activity_pair_interaction_strength_comparison",
+        "aggregation_applied": "comparison",
+        "result_type": "boolean",
+        "lookup_path": "handler_derived: Category4Handler.compare_activity_pair_strength"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_099",
+    "category": "Category_4",
+    "formal_pattern": "argmax_activity(cooccurrence_count, object_types={$OT_A,$OT_B})",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "Which activity has the strongest interaction between object types $OT_A and $OT_B?",
+    "runtime_variables": [
+      "$OT_A",
+      "$OT_B"
+    ],
+    "preconditions": [
+      "object_type_exists($OT_A)",
+      "object_type_exists($OT_B)",
+      "$OT_A != $OT_B",
+      "has_shared_activities($OT_A,$OT_B)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        },
+        {
+          "tool": "compute_multi_object_interactions",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "argmax_pair_interaction_activity",
+        "aggregation_applied": "argmax",
+        "result_type": "string",
+        "lookup_path": "handler_derived: Category4Handler.argmax_pair_interaction_activity"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_100",
+    "category": "Category_4",
+    "formal_pattern": "argmin_activity(cooccurrence_count>0, object_types={$OT_A,$OT_B})",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "Which activity has the weakest non-zero interaction between object types $OT_A and $OT_B?",
+    "runtime_variables": [
+      "$OT_A",
+      "$OT_B"
+    ],
+    "preconditions": [
+      "object_type_exists($OT_A)",
+      "object_type_exists($OT_B)",
+      "$OT_A != $OT_B",
+      "has_shared_activities($OT_A,$OT_B)"
+    ],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        },
+        {
+          "tool": "compute_multi_object_interactions",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "argmin_nonzero_pair_interaction_activity",
+        "aggregation_applied": "argmin",
+        "result_type": "string",
+        "lookup_path": "handler_derived: Category4Handler.argmin_pair_interaction_activity"
+      }
+    }
+  }
+]

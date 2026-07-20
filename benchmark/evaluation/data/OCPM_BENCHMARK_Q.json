@@ -1,0 +1,2838 @@
+[
+  {
+    "template_id": "OCPM_GEN_001",
+    "category": "Category_1",
+    "formal_pattern": "Synthetic clean-room template 1",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "What is the out-degree of activity $ACT_X for object type $OT_A in the OC-DFG?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X"
+    ],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "node_out_degree",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "ocdfg.nodes[$ACT_X].metrics[$OT_A].out_degree"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_002",
+    "category": "Category_1",
+    "formal_pattern": "Synthetic clean-room template 2",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "What is the in-degree of activity $ACT_X for object type $OT_A in the OC-DFG?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X"
+    ],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "node_in_degree",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "x"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_003",
+    "category": "Category_1",
+    "formal_pattern": "Synthetic clean-room template 3",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "How often does activity $ACT_X start an object of type $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X"
+    ],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "start_frequency",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "x"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_004",
+    "category": "Category_1",
+    "formal_pattern": "Synthetic clean-room template 4",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "How often does activity $ACT_X occur for object type $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X"
+    ],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "activity_frequency",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "x"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_005",
+    "category": "Category_1",
+    "formal_pattern": "Synthetic clean-room template 5",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "How often does activity $ACT_X end an object of type $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X"
+    ],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "end_frequency",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "x"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_006",
+    "category": "Category_1",
+    "formal_pattern": "Synthetic clean-room template 6",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "How many events are in the log?",
+    "runtime_variables": [],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "event_count",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "events.count"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_007",
+    "category": "Category_1",
+    "formal_pattern": "Synthetic clean-room template 7",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "How many events are in the log?",
+    "runtime_variables": [],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "event_count",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "events.count"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_008",
+    "category": "Category_1",
+    "formal_pattern": "Synthetic clean-room template 8",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "How many events are in the log?",
+    "runtime_variables": [],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "event_count",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "events.count"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_009",
+    "category": "Category_1",
+    "formal_pattern": "Synthetic clean-room template 9",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "How many events are in the log?",
+    "runtime_variables": [],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "event_count",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "events.count"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_010",
+    "category": "Category_1",
+    "formal_pattern": "Synthetic clean-room template 10",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "How many events are in the log?",
+    "runtime_variables": [],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "event_count",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "events.count"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_011",
+    "category": "Category_1",
+    "formal_pattern": "Synthetic clean-room template 11",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "Which activities have zero in-degree for object type $OT_A?",
+    "runtime_variables": [
+      "$OT_A"
+    ],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "zero_in",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "x"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_012",
+    "category": "Category_1",
+    "formal_pattern": "Synthetic clean-room template 12",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "Which activities have zero out-degree for object type $OT_A?",
+    "runtime_variables": [
+      "$OT_A"
+    ],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "zero_out",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "x"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_013",
+    "category": "Category_1",
+    "formal_pattern": "Synthetic clean-room template 13",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "How many events are in the log?",
+    "runtime_variables": [],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "event_count",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "events.count"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_014",
+    "category": "Category_1",
+    "formal_pattern": "Synthetic clean-room template 14",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "How many events are in the log?",
+    "runtime_variables": [],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "event_count",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "events.count"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_015",
+    "category": "Category_1",
+    "formal_pattern": "Synthetic clean-room template 15",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "How many events are in the log?",
+    "runtime_variables": [],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "event_count",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "events.count"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_016",
+    "category": "Category_1",
+    "formal_pattern": "Synthetic clean-room template 16",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "How many events are in the log?",
+    "runtime_variables": [],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "event_count",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "events.count"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_017",
+    "category": "Category_1",
+    "formal_pattern": "Synthetic clean-room template 17",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "How many events are in the log?",
+    "runtime_variables": [],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "event_count",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "events.count"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_018",
+    "category": "Category_1",
+    "formal_pattern": "Synthetic clean-room template 18",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "How many $OT_A objects interact with activity $ACT_X?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X"
+    ],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "node_object_count",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "x"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_019",
+    "category": "Category_1",
+    "formal_pattern": "Synthetic clean-room template 19",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "How many events are in the log?",
+    "runtime_variables": [],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "event_count",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "events.count"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_020",
+    "category": "Category_1",
+    "formal_pattern": "Synthetic clean-room template 20",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "How many events are in the log?",
+    "runtime_variables": [],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "event_count",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "events.count"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_021",
+    "category": "Category_1",
+    "formal_pattern": "Synthetic clean-room template 21",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "How many events are in the log?",
+    "runtime_variables": [],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "event_count",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "events.count"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_022",
+    "category": "Category_1",
+    "formal_pattern": "Synthetic clean-room template 22",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "Is there a direct transition from $ACT_X to $ACT_Y for object type $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X",
+      "$ACT_Y"
+    ],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "direct_edge_exists",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "x"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_023",
+    "category": "Category_1",
+    "formal_pattern": "Synthetic clean-room template 23",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "How many events are in the log?",
+    "runtime_variables": [],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "event_count",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "events.count"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_024",
+    "category": "Category_1",
+    "formal_pattern": "Synthetic clean-room template 24",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "How many events are in the log?",
+    "runtime_variables": [],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "event_count",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "events.count"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_025",
+    "category": "Category_1",
+    "formal_pattern": "Synthetic clean-room template 25",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "How many events are in the log?",
+    "runtime_variables": [],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "event_count",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "events.count"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_026",
+    "category": "Category_2",
+    "formal_pattern": "Synthetic clean-room template 26",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "How often does $ACT_X directly precede $ACT_Y for $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X",
+      "$ACT_Y"
+    ],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "edge_count",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "x"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_027",
+    "category": "Category_2",
+    "formal_pattern": "Synthetic clean-room template 27",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "What is the average direct edge duration from $ACT_X to $ACT_Y for $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X",
+      "$ACT_Y",
+      "$SIGMA"
+    ],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "edge_duration",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "aggregate($SIGMA, ocdfg.edges[$ACT_X,$ACT_Y,$OT_A].durations)"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_028",
+    "category": "Category_2",
+    "formal_pattern": "Synthetic clean-room template 28",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "How many events of activity $ACT_X involve object type $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X"
+    ],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "activity_events",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "x"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_029",
+    "category": "Category_2",
+    "formal_pattern": "Synthetic clean-room template 29",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "How many events of activity $ACT_X involve object type $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X"
+    ],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "activity_events",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "x"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_030",
+    "category": "Category_2",
+    "formal_pattern": "Synthetic clean-room template 30",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "Does the edge $ACT_X -> $ACT_Y exist for $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X",
+      "$ACT_Y"
+    ],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "edge_exists",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "x"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_031",
+    "category": "Category_2",
+    "formal_pattern": "Synthetic clean-room template 31",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "What is the edge label from $ACT_X to $ACT_Y?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X",
+      "$ACT_Y"
+    ],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "edge_label",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "x"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_032",
+    "category": "Category_2",
+    "formal_pattern": "Synthetic clean-room template 32",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "How many events of activity $ACT_X involve object type $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X"
+    ],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "activity_events",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "x"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_033",
+    "category": "Category_2",
+    "formal_pattern": "Synthetic clean-room template 33",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "Which outgoing edges leave $ACT_X for $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X",
+      "$ACT_Y"
+    ],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "outgoing_edges",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "x"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_034",
+    "category": "Category_2",
+    "formal_pattern": "Synthetic clean-room template 34",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "How many events of activity $ACT_X involve object type $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X"
+    ],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "activity_events",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "x"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_035",
+    "category": "Category_2",
+    "formal_pattern": "Synthetic clean-room template 35",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "Does the edge $ACT_Y -> $ACT_X exist for $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X",
+      "$ACT_Y"
+    ],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "false_edge",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "x"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_036",
+    "category": "Category_2",
+    "formal_pattern": "Synthetic clean-room template 36",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "How many events of activity $ACT_X involve object type $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X"
+    ],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "activity_events",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "x"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_037",
+    "category": "Category_2",
+    "formal_pattern": "Synthetic clean-room template 37",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "How many events of activity $ACT_X involve object type $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X"
+    ],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "activity_events",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "x"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_038",
+    "category": "Category_2",
+    "formal_pattern": "Synthetic clean-room template 38",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "How many events of activity $ACT_X involve object type $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X"
+    ],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "activity_events",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "x"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_039",
+    "category": "Category_2",
+    "formal_pattern": "Synthetic clean-room template 39",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "How many events of activity $ACT_X involve object type $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X"
+    ],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "activity_events",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "x"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_040",
+    "category": "Category_2",
+    "formal_pattern": "Synthetic clean-room template 40",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "How many events of activity $ACT_X involve object type $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X"
+    ],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "activity_events",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "x"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_041",
+    "category": "Category_2",
+    "formal_pattern": "Synthetic clean-room template 41",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "How many events of activity $ACT_X involve object type $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X"
+    ],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "activity_events",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "x"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_042",
+    "category": "Category_2",
+    "formal_pattern": "Synthetic clean-room template 42",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "How many events of activity $ACT_X involve object type $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X"
+    ],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "activity_events",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "x"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_043",
+    "category": "Category_2",
+    "formal_pattern": "Synthetic clean-room template 43",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "What share of outgoing edges from $ACT_X go to $ACT_Y for $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X",
+      "$ACT_Y"
+    ],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "branching_ratio",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "x"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_044",
+    "category": "Category_2",
+    "formal_pattern": "Synthetic clean-room template 44",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "How many events of activity $ACT_X involve object type $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X"
+    ],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "activity_events",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "x"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_045",
+    "category": "Category_2",
+    "formal_pattern": "Synthetic clean-room template 45",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "How many events of activity $ACT_X involve object type $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X"
+    ],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "activity_events",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "x"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_046",
+    "category": "Category_2",
+    "formal_pattern": "Synthetic clean-room template 46",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "How many events of activity $ACT_X involve object type $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X"
+    ],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "activity_events",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "x"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_047",
+    "category": "Category_2",
+    "formal_pattern": "Synthetic clean-room template 47",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "How many events of activity $ACT_X involve object type $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X"
+    ],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "activity_events",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "x"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_048",
+    "category": "Category_2",
+    "formal_pattern": "Synthetic clean-room template 48",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "Does $ACT_X interact with object types $OT_A and $OT_B?",
+    "runtime_variables": [
+      "$OT_A",
+      "$OT_B",
+      "$ACT_X",
+      "$ACT_Y"
+    ],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "object_interaction",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "x"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_049",
+    "category": "Category_2",
+    "formal_pattern": "Synthetic clean-room template 49",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "How many events of activity $ACT_X involve object type $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X"
+    ],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "activity_events",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "x"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_050",
+    "category": "Category_2",
+    "formal_pattern": "Synthetic clean-room template 50",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "How many events of activity $ACT_X involve object type $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X"
+    ],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "activity_events",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "x"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_051",
+    "category": "Category_3",
+    "formal_pattern": "Synthetic clean-room template 51",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "Can $ACT_X eventually reach $ACT_Y for $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X",
+      "$ACT_Y"
+    ],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "reachable",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "x"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_052",
+    "category": "Category_3",
+    "formal_pattern": "Synthetic clean-room template 52",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "Can $ACT_Y eventually reach $ACT_X for $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X",
+      "$ACT_Y"
+    ],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "not_reachable",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "x"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_053",
+    "category": "Category_3",
+    "formal_pattern": "Synthetic clean-room template 53",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "Is there a path between $ACT_X and $ACT_Y for $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X",
+      "$ACT_Y"
+    ],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "path_exists",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "x"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_054",
+    "category": "Category_3",
+    "formal_pattern": "Synthetic clean-room template 54",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "How many activities are on the path from $ACT_X to $ACT_Y for $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X",
+      "$ACT_Y"
+    ],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "path_length",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "x"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_055",
+    "category": "Category_3",
+    "formal_pattern": "Synthetic clean-room template 55",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "What is the shortest path from $ACT_X to $ACT_Y for $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X",
+      "$ACT_Y"
+    ],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "shortest_path",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "x"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_056",
+    "category": "Category_3",
+    "formal_pattern": "Synthetic clean-room template 56",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "Which activities are downstream of $ACT_X for $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X",
+      "$ACT_Y"
+    ],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "downstream",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "x"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_057",
+    "category": "Category_3",
+    "formal_pattern": "Synthetic clean-room template 57",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "Which activities form the local subgraph around $ACT_X for $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X",
+      "$ACT_Y"
+    ],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "subgraph",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "x"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_058",
+    "category": "Category_3",
+    "formal_pattern": "Synthetic clean-room template 58",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "Does $ACT_X reach $ACT_Y in the lifecycle?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X",
+      "$ACT_Y"
+    ],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "start_reaches_end",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "x"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_059",
+    "category": "Category_3",
+    "formal_pattern": "Synthetic clean-room template 59",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "Is there a direct path from $ACT_X to $ACT_Y?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X",
+      "$ACT_Y"
+    ],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "has_direct_edge",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "x"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_060",
+    "category": "Category_3",
+    "formal_pattern": "Synthetic clean-room template 60",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "How often does activity $ACT_Y directly precede $ACT_X for object type $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X",
+      "$ACT_Y"
+    ],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "directly_follows",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "x"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_061",
+    "category": "Category_3",
+    "formal_pattern": "Synthetic clean-room template 61",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "How often does activity $ACT_Y directly precede $ACT_X for object type $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X",
+      "$ACT_Y"
+    ],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "directly_follows",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "x"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_062",
+    "category": "Category_3",
+    "formal_pattern": "Synthetic clean-room template 62",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "How often does activity $ACT_Y directly precede $ACT_X for object type $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X",
+      "$ACT_Y"
+    ],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "directly_follows",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "x"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_063",
+    "category": "Category_3",
+    "formal_pattern": "Synthetic clean-room template 63",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "How often does activity $ACT_Y directly precede $ACT_X for object type $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X",
+      "$ACT_Y"
+    ],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "directly_follows",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "x"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_064",
+    "category": "Category_3",
+    "formal_pattern": "Synthetic clean-room template 64",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "How often does activity $ACT_Y directly precede $ACT_X for object type $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X",
+      "$ACT_Y"
+    ],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "directly_follows",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "x"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_065",
+    "category": "Category_3",
+    "formal_pattern": "Synthetic clean-room template 65",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "How often does activity $ACT_Y directly precede $ACT_X for object type $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X",
+      "$ACT_Y"
+    ],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "directly_follows",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "x"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_066",
+    "category": "Category_3",
+    "formal_pattern": "Synthetic clean-room template 66",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "How often does activity $ACT_Y directly precede $ACT_X for object type $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X",
+      "$ACT_Y"
+    ],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "directly_follows",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "x"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_067",
+    "category": "Category_3",
+    "formal_pattern": "Synthetic clean-room template 67",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "How often does activity $ACT_Y directly precede $ACT_X for object type $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X",
+      "$ACT_Y"
+    ],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "directly_follows",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "x"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_068",
+    "category": "Category_3",
+    "formal_pattern": "Synthetic clean-room template 68",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "How often does activity $ACT_Y directly precede $ACT_X for object type $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X",
+      "$ACT_Y"
+    ],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "directly_follows",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "x"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_069",
+    "category": "Category_3",
+    "formal_pattern": "Synthetic clean-room template 69",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "How often does activity $ACT_Y directly precede $ACT_X for object type $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X",
+      "$ACT_Y"
+    ],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "directly_follows",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "x"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_070",
+    "category": "Category_3",
+    "formal_pattern": "Synthetic clean-room template 70",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "How often does activity $ACT_Y directly precede $ACT_X for object type $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X",
+      "$ACT_Y"
+    ],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "directly_follows",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "x"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_071",
+    "category": "Category_3",
+    "formal_pattern": "Synthetic clean-room template 71",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "How often does activity $ACT_Y directly precede $ACT_X for object type $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X",
+      "$ACT_Y"
+    ],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "directly_follows",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "x"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_072",
+    "category": "Category_3",
+    "formal_pattern": "Synthetic clean-room template 72",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "How many activities are in the reachable subgraph?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X",
+      "$ACT_Y"
+    ],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "activity_count",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "x"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_073",
+    "category": "Category_3",
+    "formal_pattern": "Synthetic clean-room template 73",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "How often does activity $ACT_Y directly precede $ACT_X for object type $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X",
+      "$ACT_Y"
+    ],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "directly_follows",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "x"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_074",
+    "category": "Category_3",
+    "formal_pattern": "Synthetic clean-room template 74",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "How often does activity $ACT_Y directly precede $ACT_X for object type $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X",
+      "$ACT_Y"
+    ],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "directly_follows",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "x"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_075",
+    "category": "Category_3",
+    "formal_pattern": "Synthetic clean-room template 75",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "Which direct edges are on the path?",
+    "runtime_variables": [
+      "$OT_A",
+      "$ACT_X",
+      "$ACT_Y"
+    ],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "edge_list",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "x"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_076",
+    "category": "Category_4",
+    "formal_pattern": "Synthetic clean-room template 76",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "Does $ACT_Y eventually precede $ACT_X for $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$OT_B",
+      "$ACT_X",
+      "$ACT_Y"
+    ],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "throughput_time",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "eventually_follows_duration($ACT_Y, $ACT_X, $OT_A)"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_077",
+    "category": "Category_4",
+    "formal_pattern": "Synthetic clean-room template 77",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "How many activities are related to $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$OT_B",
+      "$ACT_X",
+      "$ACT_Y"
+    ],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "throughput_time",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "eventually_follows_duration($ACT_Y, $ACT_X, $OT_A)"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_078",
+    "category": "Category_4",
+    "formal_pattern": "Synthetic clean-room template 78",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "Does a direct edge exist from $ACT_Y to $ACT_X for $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$OT_B",
+      "$ACT_X",
+      "$ACT_Y"
+    ],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "throughput_time",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "eventually_follows_duration($ACT_Y, $ACT_X, $OT_A)"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_079",
+    "category": "Category_4",
+    "formal_pattern": "Synthetic clean-room template 79",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "How many objects of $OT_A are synchronized at $ACT_X?",
+    "runtime_variables": [
+      "$OT_A",
+      "$OT_B",
+      "$ACT_X",
+      "$ACT_Y"
+    ],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "throughput_time",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "eventually_follows_duration($ACT_Y, $ACT_X, $OT_A)"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_080",
+    "category": "Category_4",
+    "formal_pattern": "Synthetic clean-room template 80",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "What is the first activity for $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$OT_B",
+      "$ACT_X",
+      "$ACT_Y"
+    ],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "throughput_time",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "eventually_follows_duration($ACT_Y, $ACT_X, $OT_A)"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_081",
+    "category": "Category_4",
+    "formal_pattern": "Synthetic clean-room template 81",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "What is the convergence degree of $OT_A at $ACT_X?",
+    "runtime_variables": [
+      "$OT_A",
+      "$OT_B",
+      "$ACT_X",
+      "$ACT_Y"
+    ],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "convergence_degree",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "object_interactions.convergence_degree(activity == $ACT_X, object_type == $OT_A)"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_082",
+    "category": "Category_4",
+    "formal_pattern": "Synthetic clean-room template 82",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "What is the divergence degree of $OT_A at $ACT_X?",
+    "runtime_variables": [
+      "$OT_A",
+      "$OT_B",
+      "$ACT_X",
+      "$ACT_Y"
+    ],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "throughput_time",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "eventually_follows_duration($ACT_Y, $ACT_X, $OT_A)"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_083",
+    "category": "Category_4",
+    "formal_pattern": "Synthetic clean-room template 83",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "What is the average eventually-follows throughput time from $ACT_Y to $ACT_X for $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$OT_B",
+      "$ACT_X",
+      "$ACT_Y"
+    ],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "throughput_time",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "x"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_084",
+    "category": "Category_4",
+    "formal_pattern": "Synthetic clean-room template 84",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "What is the average eventually-follows throughput time from $ACT_Y to $ACT_X for $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$OT_B",
+      "$ACT_X",
+      "$ACT_Y"
+    ],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "throughput_time",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "x"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_085",
+    "category": "Category_4",
+    "formal_pattern": "Synthetic clean-room template 85",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "What is the average eventually-follows throughput time from $ACT_Y to $ACT_X for $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$OT_B",
+      "$ACT_X",
+      "$ACT_Y"
+    ],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "throughput_time",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "x"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_086",
+    "category": "Category_4",
+    "formal_pattern": "Synthetic clean-room template 86",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "What is the average eventually-follows throughput time from $ACT_Y to $ACT_X for $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$OT_B",
+      "$ACT_X",
+      "$ACT_Y"
+    ],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "throughput_time",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "x"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_087",
+    "category": "Category_4",
+    "formal_pattern": "Synthetic clean-room template 87",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "What is the average eventually-follows throughput time from $ACT_Y to $ACT_X for $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$OT_B",
+      "$ACT_X",
+      "$ACT_Y"
+    ],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "throughput_time",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "x"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_088",
+    "category": "Category_4",
+    "formal_pattern": "Synthetic clean-room template 88",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "What is the average eventually-follows throughput time from $ACT_Y to $ACT_X for $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$OT_B",
+      "$ACT_X",
+      "$ACT_Y"
+    ],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "throughput_time",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "x"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_089",
+    "category": "Category_4",
+    "formal_pattern": "Synthetic clean-room template 89",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "Which path connects $ACT_Y to $ACT_X for $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$OT_B",
+      "$ACT_X",
+      "$ACT_Y"
+    ],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "throughput_time",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "eventually_follows_duration($ACT_Y, $ACT_X, $OT_A)"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_090",
+    "category": "Category_4",
+    "formal_pattern": "Synthetic clean-room template 90",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "Which object-type pair is compared?",
+    "runtime_variables": [
+      "$OT_A",
+      "$OT_B",
+      "$ACT_X",
+      "$ACT_Y"
+    ],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "throughput_time",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "eventually_follows_duration($ACT_Y, $ACT_X, $OT_A)"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_091",
+    "category": "Category_4",
+    "formal_pattern": "Synthetic clean-room template 91",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "What is the average eventually-follows throughput time from $ACT_Y to $ACT_X for $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$OT_B",
+      "$ACT_X",
+      "$ACT_Y"
+    ],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "throughput_time",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "x"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_092",
+    "category": "Category_4",
+    "formal_pattern": "Synthetic clean-room template 92",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "What is the average eventually-follows throughput time from $ACT_Y to $ACT_X for $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$OT_B",
+      "$ACT_X",
+      "$ACT_Y"
+    ],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "throughput_time",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "x"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_093",
+    "category": "Category_4",
+    "formal_pattern": "Synthetic clean-room template 93",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "What is the average eventually-follows throughput time from $ACT_Y to $ACT_X for $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$OT_B",
+      "$ACT_X",
+      "$ACT_Y"
+    ],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "throughput_time",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "x"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_094",
+    "category": "Category_4",
+    "formal_pattern": "Synthetic clean-room template 94",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "Does synchronization exist between $OT_A and $OT_B?",
+    "runtime_variables": [
+      "$OT_A",
+      "$OT_B",
+      "$ACT_X",
+      "$ACT_Y"
+    ],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "throughput_time",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "eventually_follows_duration($ACT_Y, $ACT_X, $OT_A)"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_095",
+    "category": "Category_4",
+    "formal_pattern": "Synthetic clean-room template 95",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "How many missing synchronizations are there?",
+    "runtime_variables": [
+      "$OT_A",
+      "$OT_B",
+      "$ACT_X",
+      "$ACT_Y"
+    ],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "throughput_time",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "eventually_follows_duration($ACT_Y, $ACT_X, $OT_A)"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_096",
+    "category": "Category_4",
+    "formal_pattern": "Synthetic clean-room template 96",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "What is the average eventually-follows throughput time from $ACT_Y to $ACT_X for $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$OT_B",
+      "$ACT_X",
+      "$ACT_Y"
+    ],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "throughput_time",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "x"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_097",
+    "category": "Category_4",
+    "formal_pattern": "Synthetic clean-room template 97",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "What is the average eventually-follows throughput time from $ACT_Y to $ACT_X for $OT_A?",
+    "runtime_variables": [
+      "$OT_A",
+      "$OT_B",
+      "$ACT_X",
+      "$ACT_Y"
+    ],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "throughput_time",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "x"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_098",
+    "category": "Category_4",
+    "formal_pattern": "Synthetic clean-room template 98",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "Does impossible synchronization occur?",
+    "runtime_variables": [
+      "$OT_A",
+      "$OT_B",
+      "$ACT_X",
+      "$ACT_Y"
+    ],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "throughput_time",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "eventually_follows_duration($ACT_Y, $ACT_X, $OT_A)"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_099",
+    "category": "Category_4",
+    "formal_pattern": "Synthetic clean-room template 99",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "How many activities are shared by $OT_A and $OT_B?",
+    "runtime_variables": [
+      "$OT_A",
+      "$OT_B",
+      "$ACT_X",
+      "$ACT_Y"
+    ],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "throughput_time",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "eventually_follows_duration($ACT_Y, $ACT_X, $OT_A)"
+      }
+    }
+  },
+  {
+    "template_id": "OCPM_GEN_100",
+    "category": "Category_4",
+    "formal_pattern": "Synthetic clean-room template 100",
+    "dimensions_tested": [
+      "factual_correctness"
+    ],
+    "analyst_question_template": "Which object-type pairs are shared?",
+    "runtime_variables": [
+      "$OT_A",
+      "$OT_B",
+      "$ACT_X",
+      "$ACT_Y"
+    ],
+    "preconditions": [],
+    "evaluation_logic": {
+      "expected_tool_chain": [
+        {
+          "tool": "fetch_ocel_metadata",
+          "required": true
+        }
+      ],
+      "mathematical_assertion": {
+        "target_metric": "throughput_time",
+        "aggregation_applied": "none",
+        "result_type": "integer",
+        "lookup_path": "eventually_follows_duration($ACT_Y, $ACT_X, $OT_A)"
+      }
+    }
+  }
+]
